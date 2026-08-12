@@ -2,19 +2,15 @@
 
 This file records the current cross-repository dependency sequence. Repository-local backlogs remain authoritative for their own work.
 
-## 1. Bootstrap and review SKE
+## 1. SKE bootstrap — complete
 
-Complete [SKE #1](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/1):
+The initial SKE governance baseline was reviewed and merged in [PR #2](https://github.com/GerhardBalz/semantic-knowledge-engineering/pull/2), and the repository is now public.
 
-1. review initiative purpose and repository boundaries;
-2. review the initial evidence-backed principles;
-3. review the publication and Semantic Markdown conventions;
-4. review the contribution/adoption model;
-5. keep SKE private until the bootstrap baseline is accepted.
+SKE remains an initiative/governance layer rather than an ontology or semantic owner of ESKA, SMO, or Pizza concepts.
 
 ## 2. Adopt the Semantic Markdown convention
 
-After the SKE baseline is reviewed:
+With the SKE baseline established:
 
 1. complete [ESKA #72](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/72) as the first adoption case;
 2. adopt the convention in SMO contributor/documentation guidance and review equivalent cases;
