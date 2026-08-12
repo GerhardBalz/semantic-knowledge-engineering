@@ -1,6 +1,6 @@
 # Modern ontology-engineering reference landscape
 
-Status: initial architectural baseline for SKE #4
+Status: initial architectural baseline for SKE #4, maintained by evidence-backed follow-up work
 
 ## Purpose
 
@@ -19,7 +19,7 @@ As of August 2026:
 - **OWL 2 Second Edition** remains the current W3C Recommendation family for OWL; the OWL 2 Primer Second Edition is dated 11 December 2012.
 - **SKOS** remains a W3C Recommendation from 18 August 2009.
 - **PROV-O** remains a W3C Recommendation from 30 April 2013.
-- **SHACL** remains a W3C Recommendation from 20 July 2017.
+- **SHACL 2017** remains the latest W3C Recommendation for SHACL, while **SHACL 1.2** is an active Recommendation-track Working Draft family; SHACL 1.2 Core has Working Draft publications through June 2026.
 
 SKE documentation should therefore distinguish **stable normative baseline** from **emerging next-version work** instead of treating publication date as a proxy for relevance.
 
@@ -45,7 +45,7 @@ The layers are conceptual responsibilities, not a mandatory technology stack.
 | RDFS | Standard / semantic schema | Classes, properties, subclass/subproperty and basic domain/range semantics | W3C RDF Schema | Reuse directly for basic schema semantics | Consume rather than redefine | No SKE replacement |
 | OWL 2 | Standard / ontology language | Formally defined ontology semantics, axioms, inference, profiles | W3C Recommendation, Second Edition | Reuse for formal semantic-model axioms; SMO should describe model artifacts/relations rather than replace OWL semantics | ESKA should preserve/consume OWL semantics through implementation and execution | Gap is lifecycle/projection/execution architecture, not ontology-language semantics |
 | SKOS | Standard / vocabulary | Knowledge organization systems, concept schemes, labels, semantic relations and mappings | W3C Recommendation | Reuse where a semantic model contains concept schemes or controlled terminology | Usually an input semantic artifact rather than execution architecture | Do not model taxonomy/thesaurus semantics anew |
-| SHACL | Standard / constraint language | RDF graph constraints, validation, shapes and validation reports | W3C Recommendation | Strong candidate for concrete constraint artifacts associated with semantic models | Strong candidate for executable validation gates and data contracts | Distinguish OWL inference from closed-world/data-quality validation |
+| SHACL 2017 / emerging SHACL 1.2 | Standard / constraint and graph-description language | RDF graph constraints, validation, shapes, validation reports, and emerging broader graph-description capabilities | W3C Recommendation baseline; SHACL 1.2 active Working Draft family | Strong candidate for concrete constraint/model artifacts associated with semantic models; draft 1.2 terms must not become an unlabelled stable dependency | Strong candidate for executable validation gates, data contracts and future composable rules/profile capabilities | Distinguish OWL inference from validation; distinguish Recommendation semantics from draft 1.2 capabilities |
 | PROV-O | Standard / provenance ontology | Interchangeable provenance over entities, activities and agents | W3C Recommendation | Reuse for provenance of model artifacts, projections, versions and transformations where applicable | Reuse for execution/transformation/result provenance where applicable | SMO/ESKA should specialize or relate to PROV-O rather than invent generic provenance |
 | Protégé / WebProtégé | Tooling / modeling environment | OWL ontology authoring, reasoning, querying and collaborative ontology development | Stanford Protégé project | Authoring and inspection environment for SMO and models using SMO | Useful for authoritative semantic sources, not an execution architecture | Tool choice must remain replaceable |
 | Protégé ontology-engineering practice | Methodology / training practice | Domain/scope, competency questions, domain terms, design patterns, testing and validation strategies | Current Stanford Protégé Short Course, June 2026 | Useful methodology; should not be encoded as SMO semantics merely because it is good practice | Provides source-engineering discipline before execution | Reuse as practice, not normative SKE invention |
@@ -71,6 +71,8 @@ For SKE this suggests a useful distinction between:
 - **validation constraints** that determine whether a graph is acceptable for a particular contract or process.
 
 SMO may need to relate a semantic model to both kinds of artifact without collapsing them into one concept.
+
+Active SHACL 1.2 drafts broaden SHACL's described use cases and define additional capabilities, but those drafts are work in progress and must remain explicitly distinguished from the stable 2017 Recommendation baseline.
 
 ### Semantic identity is not serialization or hosting
 
@@ -173,7 +175,9 @@ These gaps are stronger candidates for SMO/ESKA work than generic ontology-engin
 - OWL 2 Mapping to RDF Graphs: https://www.w3.org/TR/owl2-mapping-to-rdf/
 - OWL 2 Quick Reference Guide: https://www.w3.org/TR/owl2-quick-reference/
 - SKOS Reference: https://www.w3.org/TR/skos-reference/
-- SHACL: https://www.w3.org/TR/shacl/
+- SHACL Recommendation: https://www.w3.org/TR/shacl/
+- SHACL 1.2 Core: https://www.w3.org/TR/shacl12-core/
+- SHACL 1.2 Core publication history: https://www.w3.org/standards/history/shacl12-core/
 - PROV-O: https://www.w3.org/TR/prov-o/
 
 ### Stanford Protégé
@@ -194,7 +198,7 @@ The landscape itself should not trigger speculative changes. Repository-specific
 
 High-value next investigations are:
 
-1. map current SMO v0.1 terms against RDF/RDFS/OWL/SKOS/SHACL/PROV-O and identify actual duplication or gaps;
+1. map current SMO v0.1 terms against RDF/RDFS/OWL/SKOS/SHACL/PROV-O and identify actual duplication or gaps — addressed by SKE #6 and `smo-v0.1-standards-alignment.md`;
 2. map current ESKA concepts against SHACL validation, PROV-O provenance, OAK access abstractions and ODK/ROBOT lifecycle automation;
 3. define a small terminology distinction for **semantic conformance**, **validation conformance**, and **implementation conformance** if the existing standards do not already provide adequate terms;
 4. exercise the result on Pizza before extending the vocabularies.
