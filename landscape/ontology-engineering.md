@@ -47,6 +47,8 @@ The layers are conceptual responsibilities, not a mandatory technology stack.
 | SKOS | Standard / vocabulary | Knowledge organization systems, concept schemes, labels, semantic relations and mappings | W3C Recommendation | Reuse where a semantic model contains concept schemes or controlled terminology | Usually an input semantic artifact rather than execution architecture | Do not model taxonomy/thesaurus semantics anew |
 | SHACL 2017 / emerging SHACL 1.2 | Standard / constraint and graph-description language | RDF graph constraints, validation, shapes, validation reports, and emerging broader graph-description capabilities | W3C Recommendation baseline; SHACL 1.2 active Working Draft family | Strong candidate for concrete constraint/model artifacts associated with semantic models; draft 1.2 terms must not become an unlabelled stable dependency | Strong candidate for executable validation gates, data contracts and future composable rules/profile capabilities | Distinguish OWL inference from validation; distinguish Recommendation semantics from draft 1.2 capabilities |
 | PROV-O | Standard / provenance ontology | Interchangeable provenance over entities, activities and agents | W3C Recommendation | Reuse for provenance of model artifacts, projections, versions and transformations where applicable | Reuse for execution/transformation/result provenance where applicable | SMO/ESKA should specialize or relate to PROV-O rather than invent generic provenance |
+| DCMI `conformsTo` | Vocabulary / conformance relation | Relate a resource to an established standard/profile to which it conforms | DCMI Recommendation | Reuse rather than mint generic SMO conformance property | Reuse for explicit conformance claims; Verification remains evidence/checking activity | Requires an explicit conformance target; does not encode verification evidence |
+| W3C PROF | Vocabulary / profile description | Describe profiles, their base specifications and resources such as constraints, validation, schemas and mappings | W3C Working Group Note | Candidate structure for explicit projection/preservation contracts without making them SMO core semantics | Useful conformance-target structure while ESKA records verification/execution evidence | Communities define what profile conformance means and how to test it |
 | Protégé / WebProtégé | Tooling / modeling environment | OWL ontology authoring, reasoning, querying and collaborative ontology development | Stanford Protégé project | Authoring and inspection environment for SMO and models using SMO | Useful for authoritative semantic sources, not an execution architecture | Tool choice must remain replaceable |
 | Protégé ontology-engineering practice | Methodology / training practice | Domain/scope, competency questions, domain terms, design patterns, testing and validation strategies | Current Stanford Protégé Short Course, June 2026 | Useful methodology; should not be encoded as SMO semantics merely because it is good practice | Provides source-engineering discipline before execution | Reuse as practice, not normative SKE invention |
 | OBO Foundry principles | Governance / engineering practice | Openness, format, identifier space, versioning, scope, definitions, relations, documentation, authority, naming, change notification, maintenance and semantic stability | Normative for OBO Foundry ontologies; generally recommended by OBO beyond Foundry submission | Useful evidence for governance patterns; biomedical-specific rules are not automatically universal | Useful precedent for persistent identifiers, authority and semantic stability | Adopt principles selectively with provenance, not wholesale |
@@ -73,6 +75,12 @@ For SKE this suggests a useful distinction between:
 SMO may need to relate a semantic model to both kinds of artifact without collapsing them into one concept.
 
 Active SHACL 1.2 drafts broaden SHACL's described use cases and define additional capabilities, but those drafts are work in progress and must remain explicitly distinguished from the stable 2017 Recommendation baseline.
+
+### Logical relations are not generic conformance
+
+RDF/OWL notions such as entailment, consistency/satisfiability and equivalence describe formal semantic relationships. SHACL `sh:conforms` describes a validation outcome. OWL 2 Conformance describes language document/tool conformance. `dcterms:conformsTo` describes a generic claim against an explicit standard/profile.
+
+SKE should not collapse these into a synthetic three-part conformance taxonomy. See `conformance-terminology.md`.
 
 ### Semantic identity is not serialization or hosting
 
@@ -106,7 +114,7 @@ Candidate SMO responsibility:
 - reuse SHACL for RDF validation constraints rather than inventing a parallel constraint language;
 - reuse OWL/RDFS/SKOS semantics for ontology and concept-model content.
 
-Non-goals should include defining RDF graph semantics, replacing OWL, replacing SHACL, replacing SKOS, defining generic provenance, or prescribing a complete ontology-development methodology.
+Non-goals should include defining RDF graph semantics, replacing OWL, replacing SHACL, replacing SKOS, defining generic provenance, generic conformance, or prescribing a complete ontology-development methodology.
 
 ## Boundary conclusions for ESKA
 
@@ -121,7 +129,7 @@ Candidate ESKA responsibility:
 - make validation/reasoning/provenance capabilities composable parts of execution where appropriate;
 - define contracts that tools such as OAK, ROBOT, reasoners, SHACL engines, APIs or generated artifacts can satisfy without making one tool mandatory.
 
-ESKA should not redefine ontology-language semantics, generic graph validation, generic provenance, or ontology-authoring methodology.
+ESKA should not redefine ontology-language semantics, generic graph validation, generic provenance, generic conformance, or ontology-authoring methodology.
 
 ## What SKE should own
 
@@ -144,7 +152,8 @@ Pizza should be used to test whether the landscape survives concrete implementat
 3. record model/release/transformation provenance with PROV-O where useful;
 4. use SMO to describe authoritative model and implementation projections only after the SMO concepts are justified by the landscape;
 5. use ESKA patterns to trace generated or executable artifacts back to authoritative Pizza semantics;
-6. test OAK/ROBOT/ODK capabilities where they reduce bespoke implementation work.
+6. test OAK/ROBOT/ODK capabilities where they reduce bespoke implementation work;
+7. exercise an explicit projection/preservation profile using established conformance mechanisms before adding conformance vocabulary.
 
 ## Architectural gaps worth investigating
 
@@ -154,11 +163,11 @@ In particular:
 
 - how to state that one semantic model is authoritative while a generated implementation artifact is a non-authoritative projection;
 - how to preserve traceability across semantic source → transformation → projection → executable artifact → execution/result;
-- how to distinguish semantic conformance, validation conformance and implementation conformance;
+- how to define a machine-readable projection/preservation profile stating which semantics must be preserved, may be transformed, may be omitted, or may be introduced;
 - how to expose semantic knowledge to agents/services through replaceable access mechanisms;
-- how to make these relationships machine-interpretable without creating a vocabulary for concepts already owned by OWL, SHACL, SKOS or PROV-O.
+- how to make these relationships machine-interpretable without creating a vocabulary for concepts already owned by OWL, SHACL, SKOS, PROV-O, DCMI or PROF.
 
-These gaps are stronger candidates for SMO/ESKA work than generic ontology-engineering concepts.
+These gaps are stronger candidates for SMO/ESKA work than generic ontology-engineering or conformance concepts.
 
 ## References
 
@@ -174,11 +183,17 @@ These gaps are stronger candidates for SMO/ESKA work than generic ontology-engin
 - OWL 2 Profiles: https://www.w3.org/TR/owl2-profiles/
 - OWL 2 Mapping to RDF Graphs: https://www.w3.org/TR/owl2-mapping-to-rdf/
 - OWL 2 Quick Reference Guide: https://www.w3.org/TR/owl2-quick-reference/
+- OWL 2 Conformance: https://www.w3.org/TR/owl2-conformance/
 - SKOS Reference: https://www.w3.org/TR/skos-reference/
 - SHACL Recommendation: https://www.w3.org/TR/shacl/
 - SHACL 1.2 Core: https://www.w3.org/TR/shacl12-core/
 - SHACL 1.2 Core publication history: https://www.w3.org/standards/history/shacl12-core/
 - PROV-O: https://www.w3.org/TR/prov-o/
+- Profiles Vocabulary: https://www.w3.org/TR/dx-prof/
+
+### DCMI
+
+- DCMI Metadata Terms (`dcterms:conformsTo`): https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/conformsTo/
 
 ### Stanford Protégé
 
@@ -199,6 +214,6 @@ The landscape itself should not trigger speculative changes. Repository-specific
 High-value next investigations are:
 
 1. map current SMO v0.1 terms against RDF/RDFS/OWL/SKOS/SHACL/PROV-O and identify actual duplication or gaps — addressed by SKE #6 and `smo-v0.1-standards-alignment.md`;
-2. map current ESKA concepts against SHACL validation, PROV-O provenance, OAK access abstractions and ODK/ROBOT lifecycle automation;
-3. define a small terminology distinction for **semantic conformance**, **validation conformance**, and **implementation conformance** if the existing standards do not already provide adequate terms;
-4. exercise the result on Pizza before extending the vocabularies.
+2. map current ESKA concepts against SHACL validation, PROV-O provenance, OAK access abstractions and ODK/ROBOT lifecycle automation — addressed by SKE #11 and `eska-standards-tooling-alignment.md`, with executable OAK/ROBOT proving grounds in ESKA #74/#76;
+3. define a small terminology distinction for **semantic conformance**, **validation conformance**, and **implementation conformance** if the existing standards do not already provide adequate terms — addressed by SKE #13 and `conformance-terminology.md`; the decision is to reuse precise existing mechanisms rather than mint a three-part taxonomy;
+4. exercise an explicit projection/preservation profile on Pizza before extending SMO or ESKA vocabulary.
