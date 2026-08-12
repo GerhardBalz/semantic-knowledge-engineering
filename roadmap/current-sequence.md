@@ -41,24 +41,64 @@ SMO-owned datatype properties: 0
 
 No immutable SMO or ESKA release was modified during publication.
 
-## 4. Evaluate downstream SMO alignment — current
+## 4. Cross-repository alignment decision — complete
 
-The next cross-repository activity is [SMO #11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11).
+SMO #11 performed evidence-first analysis after publication became stable. The reviewed recommendation was merged in SKE PR #18.
 
-Proceed evidence-first:
+The decision is:
 
-1. inspect the existing `eska:SemanticModel` definition and its concrete use across ESKA execution modes;
-2. compare that evidence with published `smo:SemanticModel` semantics rather than assuming equivalence from naming;
-3. classify concrete ESKA and Pizza artifacts as authoritative semantic models, implementation projections, preservation artifacts, or other roles based on actual authority/projection evidence;
-4. evaluate compatibility options from least to most semantically invasive;
-5. record the cross-repository recommendation before implementation changes;
-6. introduce ontology axioms, deprecations, or canonical SMO typing only if the evidence justifies them and only in a new governed version where required.
+```text
+canonical reusable concept        smo:SemanticModel
+ESKA compatibility surface        eska:SemanticModel
+bridge                            owl:equivalentClass
+initial ESKA deprecation          no
+second namespace migration        no
+proven Pizza projections          JSON + OpenAPI
+projection class                  smo:ImplementationProjection
+```
 
-The default preference is the least invasive alignment that is semantically true and machine-expressible.
+Important negative boundary: semantic Mapping/Transformation, preservation distributions, OAK views, Applications/UX, generic ESKA Results and validation/profile artifacts do not become `smo:ImplementationProjection` merely because they are derived or implementation-facing.
 
-## 5. Preserve immutable and historical boundaries
+## 5. Repository-owned downstream adoption — current
 
-During downstream analysis and any later implementation:
+Two independent implementation tracks are now active.
+
+### ESKA #84 — next core minor compatibility bridge
+
+Implement the reviewed bridge only in the next governed ESKA core minor version:
+
+```turtle
+eska:SemanticModel owl:equivalentClass smo:SemanticModel .
+```
+
+Requirements:
+
+- preserve `eska:SemanticModel` and keep it non-deprecated initially;
+- keep `eska:usesSemanticModel` unchanged;
+- record the dependency on immutable SMO v0.1.0 with `dcterms:requires`;
+- do not add `owl:imports` merely by symmetry;
+- bump and publish the ESKA core version through the existing governed publication lifecycle;
+- keep immutable `eska-v0.1.0` untouched.
+
+### Pizza #74 — evidence-sidecar SMO adoption
+
+Adopt SMO typing in current repository-authored evidence/provenance only:
+
+- historical Pizza semantic source → `smo:SemanticModel`;
+- JSON concept catalog → `smo:ImplementationProjection`;
+- OpenAPI contract → `smo:ImplementationProjection`.
+
+Retain complementary ESKA, PROV-O, DCTERMS, PROF and SHACL evidence where already applicable. Do not edit the historical Pizza ontology or published preservation release assets merely to add architectural typing.
+
+## 6. SMO #11 completion gate
+
+SMO #11 remains open until both ESKA #84 and Pizza #74 are reviewed and complete.
+
+Only then close the downstream-alignment work and reassess whether any further reusable semantic-modeling vocabulary is justified by new evidence.
+
+## 7. Preserve immutable and historical boundaries
+
+During downstream implementation:
 
 - do not modify immutable `smo-v0.1.0`;
 - do not modify immutable `eska-v0.1.0`;
@@ -66,6 +106,6 @@ During downstream analysis and any later implementation:
 - keep Pizza successor-lineage issue #4 dormant until a genuine semantic-modernization requirement appears;
 - keep semantic ownership in the repository that owns the relevant concept or artifact.
 
-## Independent Pizza work
+## Independent Pizza and ESKA work
 
-Pizza continues its own backlog independently. Broader OAK access, preservation releases, and other repository-local work do not need to wait for SKE unless they explicitly depend on an SKE convention or an SMO/ESKA cross-repository decision.
+Repository-local proving grounds, tooling, publication, and preservation work continue independently unless they explicitly depend on this SMO alignment sequence.
