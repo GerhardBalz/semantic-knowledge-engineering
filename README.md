@@ -21,7 +21,7 @@ SKE does **not** become authoritative for semantic concepts owned by participati
 | Repository | Role | Semantic ownership |
 | --- | --- | --- |
 | [Semantic Knowledge Engineering](https://github.com/GerhardBalz/semantic-knowledge-engineering) | Initiative architecture, governance, shared conventions, roadmap and ecosystem map | No initiative vocabulary by default |
-| [Semantic Modeling Ontology](https://github.com/GerhardBalz/semantic-modeling-ontology) | Small reusable semantic-modeling vocabulary | `SemanticModel`, `ImplementationProjection` after stable publication |
+| [Semantic Modeling Ontology](https://github.com/GerhardBalz/semantic-modeling-ontology) | Small reusable semantic-modeling vocabulary | `SemanticModel`, `ImplementationProjection` |
 | [Executable Semantic Knowledge Architecture](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture) | Architecture for semantic continuity through execution, result, verification, service, agent and deployment concerns | ESKA execution architecture |
 | [Pizza Ontology](https://github.com/GerhardBalz/pizza-ontology) | Preservation/reference project and proving ground | Pizza domain semantics and source-owned semantic artifacts |
 
@@ -36,10 +36,16 @@ The first SKE baseline contains only material already supported by implemented c
 - [Publication lifecycle](conventions/publication-lifecycle.md)
 - [Semantic Markdown](conventions/semantic-markdown.md)
 
+## Cross-repository decisions
+
+SKE records decisions here only when the evidence and consequences genuinely span participating repositories. Semantic ownership remains with the owning repositories.
+
+- [SMO–ESKA–Pizza alignment recommendation](decisions/smo-eska-pizza-alignment.md) — recommendation for review before downstream implementation.
+
 ## Current sequence
 
-The active initiative sequence is maintained in [roadmap/current-sequence.md](roadmap/current-sequence.md). The bootstrap and acceptance contract are tracked in [SKE #1](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/1).
+The active initiative sequence is maintained in [roadmap/current-sequence.md](roadmap/current-sequence.md). The completed bootstrap and acceptance contract are tracked in [SKE #1](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/1).
 
 ## Status
 
-SKE is private during bootstrap review. Public visibility is a governance milestone after the initiative boundaries, first principles, and first shared conventions have been reviewed.
+SKE is public and the bootstrap governance baseline is complete. Current initiative work focuses on evidence-backed cross-repository conventions, landscape analysis, and explicitly reviewed alignment decisions.
