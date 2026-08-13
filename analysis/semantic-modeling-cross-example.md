@@ -1,122 +1,141 @@
 # Pizza ↔ Wine/Food semantic-modeling evidence review
 
-This review implements SKE #25. It compares the two current semantic-modeling reference examples before any new reusable SMO vocabulary is proposed.
+This review implements and completes the evidence cycle started in SKE #25. It compares the Pizza and Wine/Food semantic-modeling reference examples before reusable vocabulary is promoted into SMO or ESKA.
 
-The decision rule is deliberately conservative:
+The governing rule remains conservative:
 
 ```text
 single-example observation
     ↓
-second-domain evidence
+independent second-domain evidence
     ↓
 check established vocabularies and ownership
     ↓
-only then consider reusable SKE / SMO / ESKA treatment
+only then open a narrow reusable-vocabulary evaluation
 ```
 
 ## Executive decision
 
-The comparison does **not** currently justify a general SMO vocabulary expansion.
+The completed two-domain experiment still does **not** justify broad SMO vocabulary expansion.
 
-It does justify:
+It now supports exactly one focused reusable-vocabulary evaluation:
 
-1. a repository-local correction in Semantic Modeling Pizza so current artifacts stop presenting pre-governance experimental terms as published SMO;
-2. an SKE convention around semantic authority, identity, provenance and source relationships using established vocabularies;
-3. a second-domain Wine/Food executable experiment before deciding whether purpose/competency-question or projection-scope relationships belong in SMO;
-4. continued separation of semantic-modeling concerns from ESKA-owned execution signatures and evidence structures.
+- **semantic model → competency question / purpose** recurs independently and is machine-expressible in both domains, so SMO #22 now evaluates whether a narrowly governed relation is justified.
 
-## Important integrity finding
+Other candidate concepts remain local or are already covered by established vocabularies:
 
-Semantic Modeling Pizza predates the governed SMO v0.1 publication boundary.
+- semantic authority, identity and source lineage: SKE convention using established vocabularies;
+- explicit exclusion scope: Pizza-local; Wine/Food provides useful negative evidence;
+- representation/cache/reproducibility: repository engineering concern, not universal SMO semantics;
+- `smo:ImplementationProjection`: current governed boundary remains adequate;
+- operation signatures, runtime context and agent contracts: execution-adjacent and local/ESKA-owned;
+- recommendation-evidence structure: not independently demonstrated as a reusable semantic-modeling abstraction.
 
-Its current `models/pizza-model-description.ttl` still uses:
+## Completed integrity correction — Semantic Modeling Pizza #6
 
-```turtle
-@prefix smo: <https://github.com/GerhardBalz/semantic-modeling-ontology#> .
+Semantic Modeling Pizza previously used the pre-governance namespace:
+
+```text
+https://github.com/GerhardBalz/semantic-modeling-ontology#
 ```
 
-with experimental terms including `smo:Model`, `smo:ModelRepresentation`, `smo:ModelElement`, `smo:Artifact`, `smo:hasModelKind`, `smo:usesLanguage`, `smo:hasRepresentation`, and `smo:containsElement`.
+with unpublished experimental terms.
 
-Governed SMO v0.1 is published at:
+Semantic Modeling Pizza #6 / PR #7 corrected that boundary. Current artifacts now use governed SMO only at:
 
 ```text
 https://w3id.org/smo#
 ```
 
-and intentionally contains only `smo:SemanticModel` and `smo:ImplementationProjection`.
+and restrict governed SMO usage to the published v0.1 surface. Experimental competency-question, exclusion, runtime-context and agent-contract concepts remain local; source/derivation/representation relationships use established vocabularies where sufficient.
 
-This is repository-local semantic integrity work, not evidence that those older terms should be added to SMO. Semantic Modeling Pizza #6 owns the cleanup.
+This is evidence that local experiments can be preserved without retroactively enlarging SMO.
 
-## Decision matrix
+## Completed second-domain experiment — Wine/Food #3
 
-| Candidate concept / relationship | Pizza evidence | Wine/Food evidence | Cross-domain recurrence | Existing vocabulary sufficient? | Owner / decision | Recommended action |
+Semantic Modeling Wine/Food #3 / PR #4 introduced a bounded executable recommendation model and deterministic SPARQL test.
+
+The experiment demonstrates:
+
+- a purpose-specific `smo:SemanticModel`;
+- a machine-expressible local `smwf:answersQuestion` relationship;
+- explicit lineage to both historical W3C Wine and Food semantic models;
+- a deterministic recommendation result;
+- no explicit exclusion relation;
+- no `smo:ImplementationProjection` classification;
+- no operation-signature or recommendation-evidence abstraction at the SMO level.
+
+This provides the independent evidence that SKE #25 originally required.
+
+## Updated decision matrix
+
+| Candidate concept / relationship | Pizza evidence | Wine/Food evidence | Cross-domain recurrence | Established vocabulary sufficient? | Owner / decision | Recommended action |
 |---|---|---|---|---|---|---|
-| Semantic model purpose / competency question | Pizza Menu Semantic Model has four competency questions and experimental `smp:answersQuestion` | Wine/Food has an explicit meal-course recommendation competency question, but it is documentation-only so far | **Conceptual recurrence yes; executable recurrence not yet** | DCTERMS can document purpose, but there is no tested dedicated machine relation in the current examples | SKE convention / possible future SMO candidate | **Collect more evidence**: exercise this relation in Wine/Food locally before opening SMO vocabulary work |
-| Projection scope / included elements | Pizza explicitly selects source concepts and experimentally records excluded concepts via `smp:excludesElement` | Wine/Food explicitly asks whether projection scope is needed but has not yet required exclusions | **Partial recurrence** | Standard provenance/source relations help lineage but do not by themselves express an explicit exclusion contract | Example-local for now | **Keep local / collect more evidence**; do not add `excludesElement` to SMO yet |
-| Multiple authoritative source semantic models | Pizza has one primary historical source ontology | Wine/Food purpose-specific model derives from both historical Wine and Food models | Domain pattern differs, but source lineage is common | **Yes**: `dcterms:source` + `prov:wasDerivedFrom` currently express the Wine/Food case | SKE convention | **Adopt existing-vocabulary convention; no SMO term needed** |
-| Semantic authority / identity vs repository representation | Pizza preserves external ontology identity while distinguishing published and cached representations | Wine/Food preserves W3C source identities and explicitly avoids claiming ownership or redistributing source bytes | **Strong recurrence** | **Yes**: OWL identity plus DCTERMS/PROV/DCAT-style metadata as appropriate | SKE convention | **Adopt as cross-repository convention; no SMO expansion** |
-| Local cache / reproducible representation | Pizza has a concrete byte-for-byte cache, manifest, hash verification and upstream comparison | Wine/Food deliberately has no cache yet because no concrete executable need justifies it | **No requirement recurrence yet** | DCTERMS/PROV plus artifact/integrity vocabularies can cover much of this when needed | Repository engineering | **Keep local**; representation/cache is conditional, not a universal semantic-model concept |
-| `smo:ImplementationProjection` classification | Pizza-related initiative evidence has explicit implementation-facing projections, while generic derived results are deliberately excluded from that class | Wine/Food bootstrap introduces no implementation projection | **Not yet cross-domain** | Current governed SMO class is sufficient for cases that meet its definition | SMO boundary already adequate | **Collect more evidence**; do not broaden the class or type derived outputs for symmetry |
-| Operation signatures / semantic inputs and outputs | Pizza has a `find_suitable_pizzas` agent contract and experimental operation/input/output concepts | Wine/Food has no operational contract yet | **Pizza-only** | Execution/interface vocabularies or ESKA may own these concerns; SMO evidence is insufficient | ESKA / repository-local | **Do not move into SMO**; compare with ESKA only after a second executable example exists |
-| Recommendation evidence / explanation provenance | Pizza exposes recommendation evidence as an open local modeling question | Wine/Food recommendation is only a competency question; no executable evidence graph exists yet | **Potential, not demonstrated** | PROV-O is likely part of the solution, but the required structure is not yet evidenced | Collect evidence | **Defer** until Wine/Food has an executable recommendation example |
-| Published vs experimental semantic-modeling vocabulary | Pizza still contains a pre-governance experimental `smo:` surface | Wine/Food uses governed `https://w3id.org/smo#` and only `smo:SemanticModel` | **Not a reusable concept; it is an integrity discrepancy** | N/A | Semantic Modeling Pizza | **Fix via Pizza #6**; localize or replace experimental terms rather than expanding SMO |
+| Semantic model purpose / competency question | Pizza Menu Semantic Model uses local `smp:answersQuestion` for four competency questions | Executable recommendation model independently uses local `smwf:answersQuestion` and tests the relation | **Yes — conceptual and machine-expressible recurrence** | DCTERMS can document purpose generically, but the examples need a more precise “model is intended to answer/support this question” relation | **Focused SMO candidate** | **Evaluate via SMO #22**; do not preselect the term name or outcome |
+| Projection scope / excluded elements | Pizza explicitly records `smp:excludesElement` | Wine/Food executable experiment needs no exclusion relation | **No positive recurrence; useful negative evidence** | Positive selection + provenance are sufficient in Wine/Food | Example-local | **Keep local**; do not add exclusion vocabulary to SMO |
+| Multiple authoritative source semantic models | One primary historical Pizza source | Wine/Food derives from both historical Wine and Food models | Source-lineage pattern recurs | **Yes**: `dcterms:source` + `prov:wasDerivedFrom` | SKE convention | **No SMO term needed** |
+| Semantic authority / identity vs repository representation | Historical Pizza identity remains external while local/cache representations are distinguished | Historical W3C Wine/Food identities remain external while repository-authored model is local | **Strong recurrence** | **Yes**: OWL/DCTERMS/PROV/DCAT-style metadata as appropriate | SKE convention | **No SMO expansion** |
+| Local cache / reproducible representation | Pizza has a byte-for-byte cache and integrity verification | Wine/Food executable example remains deterministic without a source cache | **Conditional, not universal** | Existing metadata/integrity vocabularies sufficient when needed | Repository engineering | **Keep local** |
+| `smo:ImplementationProjection` classification | Pizza cleanup deliberately avoids classifying generic derived artifacts as projections | Wine/Food test explicitly asserts no implementation projection exists | **Boundary recurrence, not new vocabulary recurrence** | Current governed class is sufficient | SMO boundary already adequate | **Preserve current narrow definition** |
+| Operation signatures / semantic inputs and outputs | Pizza agent contract uses local operation/input/output concepts | Wine/Food executable query requires no operation-signature model | **Pizza-only** | Execution/interface approaches remain more appropriate | ESKA / local | **Do not move into SMO** |
+| Recommendation evidence / explanation provenance | Pizza exposes a local open question | Wine/Food proves a deterministic result but does not require a reusable evidence graph | **Insufficient recurrence** | PROV-O likely covers part of future need | Collect evidence | **Defer** |
+| Published vs experimental semantic-modeling vocabulary | Former integrity discrepancy corrected by Pizza #6/PR #7 | Wine/Food used governed SMO from bootstrap | Resolved governance issue | N/A | Repository governance | **Complete** |
 
-## SKE conventions supported by two-domain evidence
-
-The following are now sufficiently supported as **initiative conventions**, without requiring new vocabulary:
+## SKE conventions now supported by two-domain evidence
 
 ### Preserve semantic authority and identity
 
-A repository representation, local cache, preserved distribution or purpose-specific model must not silently become the semantic authority for an external source model.
+Repository representations, caches, purpose-specific models and executable examples must not silently become the authority for external source semantic models.
 
-### Make source lineage explicit
+### Make source lineage explicit with established vocabularies first
 
-Use established metadata/provenance vocabularies first. Wine/Food demonstrates that multiple source semantic models can already be expressed with `dcterms:source` and `prov:wasDerivedFrom` without a new SMO relation.
+Use DCTERMS / PROV-O before creating reusable semantic-modeling relations. Wine/Food demonstrates that multiple sources do not require a new SMO relation.
 
 ### Do not infer `ImplementationProjection` from derivation alone
 
-Being derived from a semantic model is insufficient. `smo:ImplementationProjection` remains reserved for non-authoritative, target-specific implementation-facing projections that satisfy its governed definition.
+A derived artifact is not automatically an `smo:ImplementationProjection`. Both domains now provide evidence for preserving this negative boundary.
+
+### Negative evidence matters
+
+A concept need not recur structurally across reference examples. Wine/Food's lack of a need for explicit exclusions is evidence **against** promoting Pizza's local exclusion relation.
 
 ### Demonstrate before generalizing
 
-Local experimental vocabulary should remain local until a second domain independently needs the same semantic distinction and existing standards are insufficient.
+Independent machine-expressible recurrence is a prerequisite for a reusable-vocabulary evaluation, not automatic authorization to mint a term.
 
-## Evidence still required before SMO expansion
+## Focused reusable-vocabulary follow-up
 
-### Purpose / competency-question relation
+### SMO #22 — competency-question relation evaluation
 
-The concept recurs in both examples, but only Pizza currently makes it machine-expressible. Wine/Food should exercise the relation in a deterministic example using local or established vocabulary first.
+The only candidate that now passes the cross-domain evidence threshold is the relation between a semantic model and the competency question or purpose it is intentionally designed to answer/support.
 
-### Explicit projection exclusions
+SMO #22 must remain standards-first and may still conclude that:
 
-Pizza benefits from explicit exclusions (`Country`, `IceCream`) for its task-oriented menu model. Wine/Food has not yet shown that an exclusion relation is useful. Negative second-domain evidence would be valuable too.
+```text
+existing vocabulary is sufficient
+or
+SKE convention only is sufficient
+or
+one narrowly scoped SMO relation is justified
+```
 
-### Operational signature and evidence semantics
+No other SMO or ESKA vocabulary issue is justified by the current evidence.
 
-These remain execution-adjacent and currently Pizza-only. They should be tested against ESKA ownership and a second executable domain before any reusable semantic-modeling abstraction is considered.
+## Current backlog outcome
 
-## Resulting backlog
+Completed:
 
-### Created
+- SKE #25 — first cross-example evidence review;
+- Semantic Modeling Pizza #6 / PR #7 — governed SMO v0.1 alignment;
+- Semantic Modeling Wine/Food #3 / PR #4 — executable second-domain evidence.
 
-- SKE #25 — this cross-example evidence review.
-- Semantic Modeling Pizza #6 — align current Pizza artifacts with governed SMO v0.1 and isolate experimental vocabulary.
+Active:
 
-### Recommended next local experiment
+- SMO #22 — evaluate the competency-question relation;
+- Pizza Ontology #72 — reopened and waiting on stewardship/provenance feedback before any W3ID submission.
 
-Create a focused Semantic Modeling Wine/Food issue that:
+Parked:
 
-- makes the existing competency question machine-checkable;
-- exercises a purpose-specific pairing model in one deterministic query/validation/reasoning example;
-- tests whether explicit projection exclusions are useful;
-- preserves lineage to both W3C Wine and Food models;
-- records an explicit positive or negative `smo:ImplementationProjection` decision;
-- reports evidence back to SKE #25.
+- Pizza Ontology #4 — successor ontology only on a concrete semantic-modernization trigger.
 
-The attempt to create that issue during this review was blocked by the GitHub write safety layer, so it is a recommendation, not an existing issue.
-
-## Pizza preservation gate
-
-Pizza Ontology #72 contains an external stewardship/provenance gate that its own acceptance criteria require before W3ID submission. The issue is currently closed even though that external lifecycle is not complete. A backlog-integrity comment has been added; a manual reopen is still required because the automated reopen action was blocked.
-
-Pizza #4 remains separate and parked until a concrete semantic modernization requirement justifies a successor ontology lineage.
+The current durable handover is SKE #27.
