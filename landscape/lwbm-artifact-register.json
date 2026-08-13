@@ -1,0 +1,126 @@
+{
+  "id": "urn:ske:evidence:lwbm-artifact-register:2026-08-13",
+  "title": "Lehigh Wine Benchmark recovery register",
+  "observedAt": "2026-08-13",
+  "timezone": "Europe/Zurich",
+  "issue": "https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/17",
+  "benchmark": {
+    "name": "Lehigh Wine Benchmark",
+    "abbreviation": "LWBM",
+    "authority": "Lehigh SWAT",
+    "landingPage": "https://swat.cse.lehigh.edu/projects/benchmarks/lwbm/",
+    "paper": {
+      "title": "A Requirements Driven Framework for Benchmarking Semantic Web Knowledge Base Systems",
+      "authors": [
+        "Yuanbo Guo",
+        "Abir Qasem",
+        "Zhengxiang Pan",
+        "Jeff Heflin"
+      ],
+      "venue": "IEEE Transactions on Knowledge and Data Engineering",
+      "volume": "19",
+      "issue": "2",
+      "year": 2007,
+      "pages": "297-309",
+      "doi": "10.1109/TKDE.2007.19"
+    }
+  },
+  "artifacts": [
+    {
+      "role": "ontology",
+      "originalUrl": "http://swat.cse.lehigh.edu/onto/wine.owl",
+      "observedHttpsUrl": "https://swat.cse.lehigh.edu/onto/wine.owl",
+      "authority": "lehigh",
+      "identityEstablished": true,
+      "contentStatus": "retrievable",
+      "hashStatus": "pending-direct-byte-retrieval",
+      "semanticIdentity": "http://swat.cse.lehigh.edu/onto/wine.owl",
+      "termNamespace": "http://swat.cse.lehigh.edu/onto/wine.owl#",
+      "notes": [
+        "Lehigh content declares xml:base at the original HTTP ontology IRI.",
+        "Lehigh /onto/ directory index lists wine.owl with server-host metadata dated 2021-11-16 and approximately 54 KB size; this is not an ontology version IRI."
+      ]
+    },
+    {
+      "role": "data-4k",
+      "originalUrl": "http://swat.cse.lehigh.edu/data/wine-data.owl",
+      "authority": "lehigh",
+      "identityEstablished": true,
+      "contentStatus": "not-yet-recovered",
+      "hashStatus": "unavailable",
+      "declaredSize": "4k triples",
+      "notes": [
+        "Current investigation confirms the URL from the Lehigh LWBM page but has not captured governed payload bytes.",
+        "No substitute or mirror is accepted as authoritative."
+      ]
+    },
+    {
+      "role": "query-sparql",
+      "authority": "lehigh",
+      "identityEstablished": false,
+      "contentStatus": "not-yet-recovered",
+      "hashStatus": "unavailable",
+      "notes": [
+        "The Lehigh LWBM page declares a SPARQL workload link.",
+        "Exact target URL and query bytes remain to be recovered through an evidence-bearing route."
+      ]
+    },
+    {
+      "role": "query-rdql",
+      "authority": "lehigh",
+      "identityEstablished": false,
+      "contentStatus": "not-yet-recovered",
+      "hashStatus": "unavailable"
+    },
+    {
+      "role": "query-rql",
+      "authority": "lehigh",
+      "identityEstablished": false,
+      "contentStatus": "not-yet-recovered",
+      "hashStatus": "unavailable"
+    },
+    {
+      "role": "result-plot-4k",
+      "authority": "lehigh",
+      "identityEstablished": false,
+      "contentStatus": "not-yet-recovered",
+      "hashStatus": "unavailable",
+      "semanticOracle": false,
+      "notes": [
+        "Performance plot existence is declared by Lehigh.",
+        "A performance plot alone is not a semantic correctness oracle."
+      ]
+    },
+    {
+      "role": "result-plot-10k",
+      "authority": "lehigh",
+      "identityEstablished": false,
+      "contentStatus": "not-yet-recovered",
+      "hashStatus": "unavailable",
+      "semanticOracle": false
+    },
+    {
+      "role": "semantic-correctness-oracle",
+      "authority": "unknown",
+      "identityEstablished": false,
+      "contentStatus": "not-established",
+      "hashStatus": "not-applicable",
+      "semanticOracle": true
+    }
+  ],
+  "executableReuseGate": {
+    "status": "blocked",
+    "requires": [
+      "selected benchmark data with provenance and hash",
+      "exact Lehigh-authored query text with provenance and hash",
+      "independently defined semantic correctness oracle"
+    ],
+    "prohibits": [
+      "promoting a mirror to benchmark authority",
+      "reconstructing missing query text and presenting it as Lehigh-authored",
+      "using performance plots alone as semantic answer oracle",
+      "changing historical Wine/LWBM IRIs",
+      "creating a separate LWBM repository without an independent stewardship decision"
+    ]
+  }
+}
