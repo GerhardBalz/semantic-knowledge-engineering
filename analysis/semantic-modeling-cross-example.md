@@ -45,6 +45,8 @@ No SMO version, immutable tag, or W3ID publication change was required.
 - Source, derivation, representation and conformance relationships use established vocabularies where sufficient.
 - #8 / PR #9 replaced literal `smp:answersQuestion` usage with `mod:competencyQuestion` and added regression protection against reintroducing the superseded local textual relation.
 - Explicit exclusion semantics remain local Pizza evidence.
+- PR #10 completed the public-facing semantic/documentation cleanup.
+- The repository is now public and its external-authority/licensing boundaries remain explicit.
 
 ### Semantic Modeling Wine/Food
 
@@ -52,8 +54,10 @@ No SMO version, immutable tag, or W3ID publication change was required.
 - The model preserves lineage to both historical W3C Wine and Food semantic models and produces a deterministic recommendation result.
 - The experiment requires no explicit exclusion relation and no `smo:ImplementationProjection`.
 - #5 / PR #6 adopted `mod:competencyQuestion` and removed the local first-class competency-question resource because the example demonstrated no additional identity/provenance value for that resource.
+- PR #7 completed the public-facing semantic/documentation cleanup.
+- The repository is now public while historical W3C Wine/Food identities and source bytes remain external.
 
-That removal is useful negative evidence against introducing a resource-valued SMO competency-question relation from the current examples.
+The removal of the first-class question resource is useful negative evidence against introducing a resource-valued SMO competency-question relation from the current examples.
 
 ## Final decision matrix
 
@@ -91,6 +95,12 @@ The absence of exclusion semantics in Wine/Food and the removal of its unnecessa
 
 Independent recurrence opens an evaluation; it does not authorize a vocabulary term. The competency-question cycle demonstrates the intended process end-to-end: recurrence → standards review → reuse MOD → downstream adoption.
 
+## Publication outcome
+
+SKE #29 completed the deliberate visibility decision after public-facing review of both reference repositories. Semantic Modeling Pizza and Semantic Modeling Wine/Food are now verified public.
+
+Public visibility does not change semantic authority or ownership boundaries and does not imply standardization of local experimental vocabulary.
+
 ## Current backlog outcome
 
 Completed:
@@ -101,17 +111,19 @@ Completed:
 - Semantic Modeling Wine/Food #3 / PR #4 — executable second-domain evidence;
 - SMO #22 / PR #23 — standards-first competency-question evaluation;
 - Semantic Modeling Pizza #8 / PR #9 — MOD adoption;
-- Semantic Modeling Wine/Food #5 / PR #6 — MOD adoption and removal of unnecessary first-class question structure.
+- Semantic Modeling Wine/Food #5 / PR #6 — MOD adoption and removal of unnecessary first-class question structure;
+- SKE PR #31 — post-MOD initiative synchronization;
+- Semantic Modeling Pizza PR #10 and Wine/Food PR #7 — public-readiness cleanup;
+- SKE #29 — public-both governance decision and verified visibility change.
 
 Active:
 
-- SKE #29 — decide public visibility of the two semantic-modeling reference examples;
 - Pizza Ontology #72 — external stewardship/provenance gate before any Pizza preservation/reference W3ID submission.
 
 Parked:
 
 - Pizza Ontology #4 — successor ontology only on a concrete semantic-modernization trigger.
 
-No active SMO or ESKA implementation issue is justified by this evidence cycle.
+No open issue exists in SMO, ESKA, Semantic Modeling Pizza, or Semantic Modeling Wine/Food.
 
-The current durable handover remains SKE #27.
+The current durable handover is SKE #32.
