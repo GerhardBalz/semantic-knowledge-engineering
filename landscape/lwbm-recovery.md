@@ -1,15 +1,13 @@
 # LWBM recovery and executable-reuse gate
 
-Status: investigation in progress under SKE #17  
+Status: recovery gate satisfied for a selected 4k / Query 6 case; SKE #17 remains open until this evidence is reviewed and merged.  
 Observation date: 2026-08-13 (Europe/Zurich)
 
 ## Purpose
 
-The Lehigh Wine Benchmark (LWBM) is the natural benchmark continuation of the W3C Wine + Food reference case already used by ESKA. It is potentially valuable because it could connect a historically important ontology domain with an externally defined benchmark workload.
+The Lehigh Wine Benchmark (LWBM) is the natural benchmark continuation of the W3C Wine + Food reference case already used by ESKA. It can connect a historically important ontology domain with an externally defined benchmark workload, but only if benchmark authority and provenance remain explicit.
 
-That value depends on preserving benchmark authority and provenance. An executable example must not silently reconstruct missing Lehigh queries or expected results from later mirrors and then present those reconstructions as the original LWBM workload.
-
-This note records what can currently be established from Lehigh-owned publication surfaces, what remains unrecovered, and the gate that must be satisfied before an ESKA LWBM execution claim is justified.
+This note records a successful live recovery of the Lehigh-authored artifacts and identifies one narrowly governed query/result pair that now satisfies the executable-reuse gate.
 
 ## Authority
 
@@ -22,145 +20,123 @@ The page identifies LWBM as the example benchmark used with:
 - Yuanbo Guo, Abir Qasem, Zhengxiang Pan and Jeff Heflin, *A Requirements Driven Framework for Benchmarking Semantic Web Knowledge Base Systems*, IEEE Transactions on Knowledge and Data Engineering 19(2), 2007, pp. 297–309;
 - DOI `10.1109/TKDE.2007.19`.
 
-The Lehigh SWAT publications page independently records the same paper and bibliographic relationship.
+The benchmark page links the ontology, 4k data, SPARQL/RDQL/RQL workloads, and 4k/10k result tables.
 
-The benchmark page declares four relevant artifact groups:
+## Exact original targets
 
-- ontology;
-- 4k-triple data;
-- queries in SPARQL, RDQL and RQL;
-- result plots for 4,000 and 10,000 triples.
-
-## Artifact register
-
-### Ontology
-
-Declared URI:
+The live Lehigh page identifies these historical HTTP targets:
 
 ```text
-http://swat.cse.lehigh.edu/onto/wine.owl
+ontology  http://swat.cse.lehigh.edu/onto/wine.owl
+data      http://swat.cse.lehigh.edu/data/wine-data.owl
+SPARQL    http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/query-spq.html
+RDQL      http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/rdql.txt
+RQL       http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/rql.txt
+4k result http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/tkde-4t.gif
+10k result http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/tkde-10t.gif
 ```
 
-Current HTTPS retrieval:
+These identifiers are preserved as the source/publication identities. The recovery process does not replace them with GitHub, cache, or archive identities.
+
+## Governed network recovery
+
+SKE PR #20 adds a credential-free GitHub Actions probe that starts from each original HTTP target, follows redirects, does not rewrite payloads, records response metadata and SHA-256, and uploads the recovered bytes only as a short-lived workflow artifact.
+
+Observed workflow run:
 
 ```text
-https://swat.cse.lehigh.edu/onto/wine.owl
+run        31673627053
+observed   2026-08-13T06:23:09Z
+result     success
 ```
 
-Observed status: **content retrievable**.
+All seven Lehigh targets returned HTTP 200 and resolved to the corresponding HTTPS path.
 
-The retrieved Lehigh document declares:
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Wine ontology | 55,705 | `30da3cd5f8c3df59c83cbc309750292ed83e990157028f044be347b5240d1775` |
+| 4k data | 309,178 | `df22414d20d97937b84bce63665df791720025276350a64fa97e7b37db723b71` |
+| SPARQL workload | 2,210 | `f981639d0257a7a96c2e475902969322b0943ddf0a4b3d5405aeb6eacb9f1428` |
+| RDQL workload | 1,808 | `e355e3bb67ad022cb7cbd48f8b279dcb39c71448dfb229cecedae54e944becf3` |
+| RQL workload | 1,390 | `3667600c639fed7c9efb087096bf6cc7ac453c2c200588f1a0435a99cb37752e` |
+| 4k result table | 10,612 | `7496ef4db76e91228dac73314227817f10345402a5f55305fa38ce303b520c11` |
+| 10k result table | 7,592 | `b4d9fe32aaeeba0ddda7791f670a7c67069c8333d8f83db46f9851e03bc4375a` |
+
+The RDF/XML ontology and data are currently served with `text/html; charset=iso-8859-1`; that HTTP media type is recorded as publication evidence but does not alter the RDF document content or semantic identity.
+
+The uploaded recovery ZIP itself had SHA-256:
 
 ```text
-xml:base="http://swat.cse.lehigh.edu/onto/wine.owl"
-xmlns:wine="http://swat.cse.lehigh.edu/onto/wine.owl#"
+4811b4f5ea92af5a499194fdbf12b2c60eaeffb9fa1ac97f69fc9e566a2fce02
 ```
 
-and identifies itself as the Wine Ontology. It records a prior version at the 18 August 2003 W3C OWL Guide Wine ontology and states lineage from the earlier DAML Wine ontology.
+Recovered third-party bytes are not committed into SKE by this work.
 
-The Lehigh `/onto/` directory index also lists `wine.owl` as a hosted artifact, with the server directory metadata showing a 2021-11-16 timestamp and approximately 54 KB size. That directory timestamp is publication-host metadata and is not an ontology version identifier.
+## Exact SPARQL workload
 
-Current conclusion: the ontology component is sufficiently identified for provenance work, although direct byte hashing still needs to be captured through a governed retrieval path before a complete artifact manifest can be declared.
+The recovered Lehigh SPARQL page contains nine numbered queries.
 
-### 4k data
+It uses historical tuple-style `WHERE` syntax predating current SPARQL 1.1 syntax. That historical text is evidence and must be preserved as such. A later executable form may transform the syntax explicitly, but must not silently replace the Lehigh-authored query text.
 
-Declared URI:
+### Selected Query 6
+
+The exact semantic surface published by Lehigh is:
 
 ```text
-http://swat.cse.lehigh.edu/data/wine-data.owl
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wine: <http://swat.cse.lehigh.edu/onto/wine.owl#>
+
+SELECT ?X
+
+WHERE (?X, rdf:type, wine:Wine) ,
+ (?X, wine:locatedIn, wine:CaliforniaRegion)
 ```
 
-The LWBM page explicitly labels this as:
+The source page containing this query is pinned by:
 
 ```text
-Data (4k triples)
+SHA-256 f981639d0257a7a96c2e475902969322b0943ddf0a4b3d5405aeb6eacb9f1428
 ```
 
-Observed status: **Lehigh identity confirmed; bytes not yet recovered through a governed retrieval path**.
+## Independent semantic oracle
 
-The current HTTPS-oriented retrieval path used during this investigation does not return the data bytes. This must not be interpreted as evidence that every possible direct or archival retrieval route is permanently unavailable.
-
-No substitute dataset has been accepted.
-
-### SPARQL workload
-
-The Lehigh LWBM page exposes a link labelled `SPARQL` alongside RDQL and RQL.
-
-Observed status: **Lehigh workload existence confirmed; exact SPARQL bytes and link target not yet governed/pinned**.
-
-The current client could not follow the legacy query target successfully. Search-engine discovery did not establish a second Lehigh-owned copy containing the exact query text.
-
-No query text from a mirror, paper paraphrase or self-authored reconstruction is accepted as the LWBM SPARQL workload at this stage.
-
-### RDQL and RQL workloads
-
-Observed status: **declared by Lehigh; not recovered**.
-
-These are secondary for an initial modern executable example because SPARQL would be the preferred workload, but they remain part of the historical benchmark record and should be included in archival recovery where possible.
-
-### Result plots
-
-The Lehigh page declares results for:
+The recovered Lehigh 4k result table is not merely a timing plot. It reports, per query and system:
 
 ```text
-4,000 triples
-10,000 triples
+time
+result
+completeness
 ```
 
-Observed status: **result-plot links declared; image bytes not yet governed/pinned**.
+For **Query 6**, all three systems shown independently report the same outcome:
 
-Even if recovered, performance plots alone are not a sufficient semantic answer oracle. They can support historical performance provenance, but an ESKA `Verification` of semantic correctness needs independently defined expected rows, counts, entailments, or another correctness contract.
+| System | Result count | Completeness |
+| --- | ---: | ---: |
+| OWLim | 23 | 100 |
+| Jena | 23 | 100 |
+| Pellet | 23 | 100 |
 
-## Current evidence table
+The source table is the Lehigh artifact:
 
-| Artifact | Lehigh authority | Identity established | Content recovered | Hash pinned | Sufficient for executable semantic verification |
-| --- | --- | --- | --- | --- | --- |
-| LWBM landing page | yes | yes | yes | not required as benchmark payload | contextual only |
-| Wine ontology | yes | yes | yes | pending | source/model evidence only |
-| 4k data | yes | yes | no | no | no |
-| SPARQL workload | yes | existence only | no | no | no |
-| RDQL workload | yes | existence only | no | no | no |
-| RQL workload | yes | existence only | no | no | no |
-| 4k result plot | yes | existence only | no | no | no |
-| 10k result plot | yes | existence only | no | no | no |
-| semantic expected-answer oracle | not yet established | no | no | no | no |
+```text
+http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/tkde-4t.gif
+SHA-256 7496ef4db76e91228dac73314227817f10345402a5f55305fa38ce303b520c11
+```
 
-## What was deliberately not done
+This gives a benchmark-author-published correctness target for the selected case:
 
-The investigation did not:
+```text
+dataset       Lehigh 4k wine-data.owl
+query         LWBM Query 6
+expected      23 results
+evidence      three result columns agree; completeness = 100 for each
+```
 
-- replace the declared Lehigh 4k data with a later Wine dataset;
-- derive a new benchmark dataset from the live ontology;
-- infer the missing SPARQL workload from the 2007 paper;
-- take a GitHub copy as authoritative merely because it is convenient to fetch;
-- treat performance graphs as semantic correctness answers;
-- modernize the Wine ontology IRI;
-- create a separate Wine/LWBM repository;
-- create an ESKA LWBM execution issue before the evidence gate is met;
-- add SKE, SMO or ESKA vocabulary.
-
-## Recovery strategy
-
-The next recovery sequence is:
-
-1. Recover the exact historical link targets from the original LWBM page or an independently verifiable capture of that page.
-2. Recover `wine-data.owl` from Lehigh directly or from a web archive capture that preserves the original Lehigh URL and capture metadata.
-3. Recover the Lehigh-authored SPARQL workload from the same authority chain.
-4. Record for every recovered payload:
-   - original Lehigh URL;
-   - retrieval URL or archive capture URL;
-   - capture/retrieval timestamp;
-   - media type where available;
-   - byte length;
-   - SHA-256;
-   - authority classification;
-   - whether redistribution in SKE/ESKA is permitted or whether CI must fetch it externally.
-5. Compare multiple recovered copies, if available, by cryptographic digest rather than assuming mirrors are identical.
-6. Determine whether Lehigh published semantic expected answers/counts for the LWBM queries. If no such oracle exists, document that limitation explicitly rather than inventing one.
+This is independent of any result that ESKA might later compute.
 
 ## Executable-reuse gate
 
-An ESKA LWBM proving ground may be opened only when all three of the following are governed:
+The original gate was:
 
 ```text
 selected benchmark data
@@ -170,13 +146,52 @@ exact Lehigh-authored query text
 independently defined semantic correctness oracle
 ```
 
-The oracle can be an expected result set, expected result count, entailment expectation, or another Lehigh-defined correctness criterion. A performance timing/plot by itself is insufficient.
+For the selected **4k / Query 6** case, all three components are now governed:
 
-If the data and query can be recovered but no independent correctness oracle can be established, LWBM should remain a preservation/reference case rather than being presented as an external-oracle ESKA verification benchmark.
+```text
+data
+  df22414d20d97937b84bce63665df791720025276350a64fa97e7b37db723b71
+
+query source
+  f981639d0257a7a96c2e475902969322b0943ddf0a4b3d5405aeb6eacb9f1428
+
+oracle source
+  7496ef4db76e91228dac73314227817f10345402a5f55305fa38ce303b520c11
+
+expected result count
+  23
+```
+
+Therefore the preservation/reproducibility gate is **satisfied for this selected case**.
+
+## Constraints on an ESKA implementation
+
+A future ESKA proving ground should:
+
+1. Fetch the Lehigh ontology, 4k data, SPARQL workload and 4k result evidence from their original Lehigh identities.
+2. Verify the governed hashes before treating retrieved bytes as the benchmark inputs/evidence.
+3. Preserve the historical Query 6 text separately from any executable transformation.
+4. Declare any SPARQL 1.1 translation as an implementation-facing syntax transformation, not as the original Lehigh query.
+5. Execute the query with sufficient semantics to return the benchmark-author result.
+6. Require exactly 23 normalized answers.
+7. Keep physical retrieval and execution tooling non-authoritative.
+8. Avoid adding LWBM-specific ESKA vocabulary unless the execution exposes a genuine semantic gap.
+
+## What is still deliberately not claimed
+
+This recovery does not establish:
+
+- that every one of the nine queries has an unambiguous single answer-count oracle across every system;
+- that the historical tuple-style query syntax can be executed unchanged by modern SPARQL 1.1 engines;
+- that the Lehigh server's current HTTP media types are ideal RDF publication metadata;
+- redistribution permission for committing the recovered third-party payloads into SKE or ESKA;
+- a need for a separate LWBM repository.
+
+Those are independent questions.
 
 ## Relation to the reference corpus
 
-The current evidence chain is:
+The evidence chain is now:
 
 ```text
 W3C Wine + Food
@@ -186,45 +201,32 @@ ESKA Wine/Food import proof
     → import identity and replaceable retrieval
 
 LWBM
-    → Lehigh benchmark identity and workload declaration
-    → preservation gate still open
+    → exact live Lehigh workload recovered and hash-pinned
+    → Query 6 external result oracle established
+    → eligible for a narrowly scoped ESKA proving ground
 
 LUBM Query 11
     → external-oracle ESKA benchmark already proven
 ```
 
-This difference is useful. LUBM demonstrates that ESKA can verify an externally defined benchmark oracle. LWBM now tests whether historical benchmark publication can be reconstructed with enough provenance to support the same standard of evidence.
+## Architectural conclusion
 
-## Architectural conclusion so far
+This recovery provides another concrete instance of the SKE principle:
 
-The absence of conveniently retrievable workload bytes is **not** a reason to sever semantics or authority.
+> Semantic authority should survive publication mechanics.
 
-The correct response is:
-
-```text
-preserve original benchmark identity
-        ↓
-recover physical artifacts through evidence-bearing routes
-        ↓
-record provenance and hashes
-        ↓
-do not promote mirrors to semantic authority
-        ↓
-execute only when the benchmark contract is independently recoverable
-```
-
-This is consistent with the existing SKE principles that semantic identity is independent of publication backend and that execution must not sever semantics.
+The browser/cache path could not retrieve the legacy assets, but the original Lehigh identities remained valid and a clean external runner recovered the exact payloads by following their publication redirects. The appropriate response was not to rewrite identity or use a mirror, but to change the retrieval mechanism and preserve the evidence chain.
 
 ## Primary sources
 
 - Lehigh SWAT, `LWBM: Lehigh Wine Benchmark`;
 - Lehigh SWAT hosted `wine.owl`;
-- Lehigh SWAT `/onto/` directory index;
+- Lehigh SWAT hosted `wine-data.owl`;
+- Lehigh SWAT `query-spq.html`, `rdql.txt`, and `rql.txt`;
+- Lehigh SWAT `tkde-4t.gif` and `tkde-10t.gif`;
 - Lehigh SWAT publications index;
 - Guo, Qasem, Pan and Heflin, *A Requirements Driven Framework for Benchmarking Semantic Web Knowledge Base Systems*, IEEE TKDE 19(2), 2007, DOI `10.1109/TKDE.2007.19`.
 
 ## Issue status
 
-SKE #17 remains **open**.
-
-The preservation/reproducibility gate is not yet satisfied, and no ESKA LWBM executable issue should be created from this evidence alone.
+After this recovery evidence is reviewed and merged, SKE #17 can be completed for the selected Query 6 executable-reuse gate.

@@ -1,7 +1,7 @@
 {
   "id": "urn:ske:evidence:lwbm-artifact-register:2026-08-13",
   "title": "Lehigh Wine Benchmark recovery register",
-  "observedAt": "2026-08-13",
+  "observedAt": "2026-08-13T06:23:09Z",
   "timezone": "Europe/Zurich",
   "issue": "https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/17",
   "benchmark": {
@@ -25,102 +25,139 @@
       "doi": "10.1109/TKDE.2007.19"
     }
   },
+  "recoveryProbe": {
+    "workflowRun": 31673627053,
+    "policy": {
+      "startFromOriginalHttpUrl": true,
+      "followRedirects": true,
+      "rewritePayloads": false,
+      "commitRecoveredThirdPartyBytes": false
+    },
+    "artifactZipSha256": "4811b4f5ea92af5a499194fdbf12b2c60eaeffb9fa1ac97f69fc9e566a2fce02"
+  },
   "artifacts": [
     {
       "role": "ontology",
       "originalUrl": "http://swat.cse.lehigh.edu/onto/wine.owl",
-      "observedHttpsUrl": "https://swat.cse.lehigh.edu/onto/wine.owl",
+      "observedEffectiveUrl": "https://swat.cse.lehigh.edu/onto/wine.owl",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=iso-8859-1",
+      "bytes": 55705,
+      "sha256": "30da3cd5f8c3df59c83cbc309750292ed83e990157028f044be347b5240d1775",
       "authority": "lehigh",
-      "identityEstablished": true,
-      "contentStatus": "retrievable",
-      "hashStatus": "pending-direct-byte-retrieval",
-      "semanticIdentity": "http://swat.cse.lehigh.edu/onto/wine.owl",
-      "termNamespace": "http://swat.cse.lehigh.edu/onto/wine.owl#",
-      "notes": [
-        "Lehigh content declares xml:base at the original HTTP ontology IRI.",
-        "Lehigh /onto/ directory index lists wine.owl with server-host metadata dated 2021-11-16 and approximately 54 KB size; this is not an ontology version IRI."
-      ]
+      "contentStatus": "recovered-live"
     },
     {
       "role": "data-4k",
       "originalUrl": "http://swat.cse.lehigh.edu/data/wine-data.owl",
+      "observedEffectiveUrl": "https://swat.cse.lehigh.edu/data/wine-data.owl",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=iso-8859-1",
+      "bytes": 309178,
+      "sha256": "df22414d20d97937b84bce63665df791720025276350a64fa97e7b37db723b71",
       "authority": "lehigh",
-      "identityEstablished": true,
-      "contentStatus": "not-yet-recovered",
-      "hashStatus": "unavailable",
-      "declaredSize": "4k triples",
-      "notes": [
-        "Current investigation confirms the URL from the Lehigh LWBM page but has not captured governed payload bytes.",
-        "No substitute or mirror is accepted as authoritative."
-      ]
+      "contentStatus": "recovered-live"
     },
     {
       "role": "query-sparql",
+      "originalUrl": "http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/query-spq.html",
+      "observedEffectiveUrl": "https://swat.cse.lehigh.edu/projects/benchmarks/lwbm/query-spq.html",
+      "httpStatus": 200,
+      "contentType": "text/html",
+      "bytes": 2210,
+      "sha256": "f981639d0257a7a96c2e475902969322b0943ddf0a4b3d5405aeb6eacb9f1428",
       "authority": "lehigh",
-      "identityEstablished": false,
-      "contentStatus": "not-yet-recovered",
-      "hashStatus": "unavailable",
-      "notes": [
-        "The Lehigh LWBM page declares a SPARQL workload link.",
-        "Exact target URL and query bytes remain to be recovered through an evidence-bearing route."
-      ]
+      "contentStatus": "recovered-live"
     },
     {
       "role": "query-rdql",
+      "originalUrl": "http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/rdql.txt",
+      "observedEffectiveUrl": "https://swat.cse.lehigh.edu/projects/benchmarks/lwbm/rdql.txt",
+      "httpStatus": 200,
+      "contentType": "text/plain",
+      "bytes": 1808,
+      "sha256": "e355e3bb67ad022cb7cbd48f8b279dcb39c71448dfb229cecedae54e944becf3",
       "authority": "lehigh",
-      "identityEstablished": false,
-      "contentStatus": "not-yet-recovered",
-      "hashStatus": "unavailable"
+      "contentStatus": "recovered-live"
     },
     {
       "role": "query-rql",
+      "originalUrl": "http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/rql.txt",
+      "observedEffectiveUrl": "https://swat.cse.lehigh.edu/projects/benchmarks/lwbm/rql.txt",
+      "httpStatus": 200,
+      "contentType": "text/plain",
+      "bytes": 1390,
+      "sha256": "3667600c639fed7c9efb087096bf6cc7ac453c2c200588f1a0435a99cb37752e",
       "authority": "lehigh",
-      "identityEstablished": false,
-      "contentStatus": "not-yet-recovered",
-      "hashStatus": "unavailable"
+      "contentStatus": "recovered-live"
     },
     {
       "role": "result-plot-4k",
+      "originalUrl": "http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/tkde-4t.gif",
+      "observedEffectiveUrl": "https://swat.cse.lehigh.edu/projects/benchmarks/lwbm/tkde-4t.gif",
+      "httpStatus": 200,
+      "contentType": "image/gif",
+      "bytes": 10612,
+      "sha256": "7496ef4db76e91228dac73314227817f10345402a5f55305fa38ce303b520c11",
       "authority": "lehigh",
-      "identityEstablished": false,
-      "contentStatus": "not-yet-recovered",
-      "hashStatus": "unavailable",
-      "semanticOracle": false,
-      "notes": [
-        "Performance plot existence is declared by Lehigh.",
-        "A performance plot alone is not a semantic correctness oracle."
-      ]
+      "contentStatus": "recovered-live"
     },
     {
       "role": "result-plot-10k",
+      "originalUrl": "http://swat.cse.lehigh.edu/projects/benchmarks/lwbm/tkde-10t.gif",
+      "observedEffectiveUrl": "https://swat.cse.lehigh.edu/projects/benchmarks/lwbm/tkde-10t.gif",
+      "httpStatus": 200,
+      "contentType": "image/gif",
+      "bytes": 7592,
+      "sha256": "b4d9fe32aaeeba0ddda7791f670a7c67069c8333d8f83db46f9851e03bc4375a",
       "authority": "lehigh",
-      "identityEstablished": false,
-      "contentStatus": "not-yet-recovered",
-      "hashStatus": "unavailable",
-      "semanticOracle": false
-    },
-    {
-      "role": "semantic-correctness-oracle",
-      "authority": "unknown",
-      "identityEstablished": false,
-      "contentStatus": "not-established",
-      "hashStatus": "not-applicable",
-      "semanticOracle": true
+      "contentStatus": "recovered-live"
     }
   ],
+  "selectedExecutableCandidate": {
+    "dataset": "data-4k",
+    "queryNumber": 6,
+    "historicalQuerySyntax": "pre-SPARQL-1.0 tuple-style WHERE syntax as published by Lehigh",
+    "historicalQueryText": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX wine: <http://swat.cse.lehigh.edu/onto/wine.owl#>\n\nSELECT ?X\n\nWHERE (?X, rdf:type, wine:Wine) ,\n (?X, wine:locatedIn, wine:CaliforniaRegion)",
+    "querySourceSha256": "f981639d0257a7a96c2e475902969322b0943ddf0a4b3d5405aeb6eacb9f1428",
+    "oracle": {
+      "sourceRole": "result-plot-4k",
+      "sourceSha256": "7496ef4db76e91228dac73314227817f10345402a5f55305fa38ce303b520c11",
+      "expectedResultCount": 23,
+      "reportedSystems": [
+        {
+          "system": "OWLim",
+          "resultCount": 23,
+          "completeness": 100
+        },
+        {
+          "system": "Jena",
+          "resultCount": 23,
+          "completeness": 100
+        },
+        {
+          "system": "Pellet",
+          "resultCount": 23,
+          "completeness": 100
+        }
+      ],
+      "interpretation": "Lehigh's published 4k result table independently reports the same Query 6 result count with 100 completeness for all three systems shown."
+    }
+  },
   "executableReuseGate": {
-    "status": "blocked",
-    "requires": [
-      "selected benchmark data with provenance and hash",
-      "exact Lehigh-authored query text with provenance and hash",
-      "independently defined semantic correctness oracle"
-    ],
-    "prohibits": [
-      "promoting a mirror to benchmark authority",
-      "reconstructing missing query text and presenting it as Lehigh-authored",
-      "using performance plots alone as semantic answer oracle",
-      "changing historical Wine/LWBM IRIs",
-      "creating a separate LWBM repository without an independent stewardship decision"
+    "status": "satisfied-for-selected-query-6-case",
+    "satisfiedBy": {
+      "benchmarkDataSha256": "df22414d20d97937b84bce63665df791720025276350a64fa97e7b37db723b71",
+      "exactQuerySourceSha256": "f981639d0257a7a96c2e475902969322b0943ddf0a4b3d5405aeb6eacb9f1428",
+      "independentOracleSourceSha256": "7496ef4db76e91228dac73314227817f10345402a5f55305fa38ce303b520c11",
+      "expectedResultCount": 23
+    },
+    "constraints": [
+      "preserve exact historical query text as evidence",
+      "any executable SPARQL 1.1 form must be declared as a transformation, not substituted for the historical text",
+      "fetch live Lehigh payloads by original identity and verify hashes before execution",
+      "do not commit recovered third-party payloads without an explicit redistribution decision",
+      "do not promote mirrors or caches to benchmark authority"
     ]
   }
 }
