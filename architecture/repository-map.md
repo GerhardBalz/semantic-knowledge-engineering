@@ -12,7 +12,7 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** None by default. SKE does not mint an `ske:` vocabulary merely to describe governance.
 
-**Lifecycle/status:** Public. SKE #27 is the current durable handover. SKE #25 / PR #26 and SKE PR #28 completed the Pizza ↔ Wine/Food evidence cycle and its first synchronization. SKE #29 is the active visibility-governance decision for the two semantic-modeling reference examples.
+**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly.
 
 ## Semantic foundations
 
@@ -22,9 +22,9 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** Governed SMO v0.1 owns `smo:SemanticModel` and `smo:ImplementationProjection`. Additional vocabulary requires standards-first evidence and governance.
 
-**Lifecycle/status:** Public; v0.1.0 and immutable W3ID publication complete. SMO #22 / PR #23 completed the standards-first competency-question evaluation and concluded that MOD `mod:competencyQuestion` should be reused instead of adding new SMO vocabulary. `model/smo.ttl` and the governed publication remain unchanged.
+**Lifecycle/status:** Public; v0.1.0 and immutable W3ID publication complete. SMO #22 / PR #23 concluded that MOD `mod:competencyQuestion` should be reused instead of adding a new SMO competency-question relation. `model/smo.ttl` and governed SMO v0.1 remain unchanged.
 
-**Current backlog:** No active SMO implementation issue from the Pizza/Wine-Food evidence cycle.
+**Current backlog:** No open issues.
 
 ## Execution architecture
 
@@ -34,7 +34,9 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** ESKA execution architecture and ESKA-owned concepts. Execution signatures and evidence structures do not migrate into SMO merely for symmetry.
 
-**Lifecycle/status:** Public; core 0.2.0 SMO alignment and immutable W3ID publication complete. No active ESKA issue is justified by the current Pizza/Wine-Food evidence cycle.
+**Lifecycle/status:** Public; core 0.2.0 SMO alignment and immutable W3ID publication complete.
+
+**Current backlog:** No open issues.
 
 ## Reference / preservation projects
 
@@ -44,9 +46,11 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** Historical Pizza semantics remain source-owned. The repository does not claim authority over `co-ode.org` or rewrite Pizza 2.0 ontology/version/entity identity merely to improve resolution.
 
-**Lifecycle/status:** Public. [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) is reopened and remains the active stewardship/provenance + W3ID lifecycle gate. No Pizza W3ID submission occurs before external feedback is received and assessed.
+**Lifecycle/status:** Public. [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) is the sole active P1 in the audited initiative backlog and remains the external stewardship/provenance + W3ID lifecycle gate. No Pizza W3ID submission occurs before external feedback is received and assessed.
 
-**Backlog:** [Pizza #4](https://github.com/GerhardBalz/pizza-ontology/issues/4) remains parked until a concrete semantic-modernization requirement justifies a successor ontology lineage.
+Initial outreach to Matthew Horridge was sent on 12 August 2026. A connected-mailbox check on 13 August 2026 found no reply concerning provenance, present-day stewardship, or the proposed preservation/reference PID namespace.
+
+**Backlog:** [Pizza #4](https://github.com/GerhardBalz/pizza-ontology/issues/4) remains parked P2 until a concrete semantic-modernization requirement justifies a successor ontology lineage.
 
 ## Semantic modeling reference examples
 
@@ -54,21 +58,25 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Purpose:** Demonstrate semantic-modeling distinctions using Pizza without becoming authority for the historical Pizza ontology.
 
-**Lifecycle/status:** Private pending SKE #29. The reference-example baseline is stable: #6 / PR #7 completed governed SMO v0.1 alignment and #8 / PR #9 adopted MOD `mod:competencyQuestion`. Validation is green.
+**Lifecycle/status:** Public. The reference-example baseline is stable: #6 / PR #7 completed governed SMO v0.1 alignment, #8 / PR #9 adopted MOD `mod:competencyQuestion`, and PR #10 completed the public-facing semantic/documentation cleanup. Validation is green.
 
-**Authority/licensing boundary:** Historical Pizza ontology identity remains external. The repository's cached source is explicitly attributed and recorded as CC BY 3.0 according to the ontology metadata; repository-authored work is MIT-licensed.
+**Authority/licensing boundary:** Historical Pizza ontology identity remains external. The repository's cached source is explicitly attributed and recorded as CC BY 3.0 according to ontology metadata; repository-authored work is MIT-licensed.
 
 **Current evidence:** explicit exclusions remain Pizza-local; source/derivation/representation relationships prefer established vocabularies; textual competency questions use MOD rather than local/SMO vocabulary.
+
+**Current backlog:** No open issues.
 
 ### `GerhardBalz/semantic-modeling-wine-food`
 
 **Purpose:** Test the semantic-modeling reference-example pattern against W3C OWL Wine and Food while preserving external authority and identity.
 
-**Lifecycle/status:** Private pending SKE #29. Bootstrap, executable second-domain evidence and MOD adoption are complete through #3 / PR #4 and #5 / PR #6. Validation is green.
+**Lifecycle/status:** Public. Bootstrap, executable second-domain evidence and MOD adoption completed through #3 / PR #4 and #5 / PR #6; PR #7 completed the public-facing semantic/documentation cleanup. Validation is green.
 
 **Authority/licensing boundary:** Historical W3C Wine/Food identities remain external. The repository references but does not redistribute the source ontology files; original repository-authored work is MIT-licensed.
 
 **Current evidence:** competency questions use MOD; explicit exclusions were not needed; the first-class local competency-question resource was removed as unnecessary; no `smo:ImplementationProjection`, operation-signature abstraction or reusable recommendation-evidence model was justified.
+
+**Current backlog:** No open issues.
 
 ## Supporting publication infrastructure
 
@@ -78,7 +86,7 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** None. This is supporting infrastructure, not a conceptual SKE repository.
 
-**Lifecycle/status:** ESKA core 0.2.0 routing is merged and externally verified. Future identifier publication remains governed by the repository owning each lifecycle.
+**Lifecycle/status:** ESKA core 0.2.0 routing is merged and externally verified. Future identifier publication remains governed by the repository owning each lifecycle. Pizza preservation/reference routes remain proposed and gated by Pizza #72.
 
 ## Boundary: Pizza Ontology vs Semantic Modeling Pizza
 
@@ -88,28 +96,26 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 ```text
 SKE
-  #27  ACTIVE — durable handover
-  #29  ACTIVE — public visibility decision for the two reference examples
-  #25  COMPLETE — Pizza ↔ Wine/Food evidence review
+  #32  ACTIVE — durable handover
+  #29  COMPLETE after final synchronization
+  #27  SUPERSEDED
+  #22  SUPERSEDED
 
 SMO
-  #22  COMPLETE — standards-first competency-question evaluation
-  no active implementation item
+  no open issues
 
 ESKA
-  no active implementation item from this evidence cycle
+  no open issues
 
 Pizza Ontology
-  #72  ACTIVE — stewardship/W3ID external gate
-  #4   PARKED — successor ontology on concrete semantic trigger only
+  #72  ACTIVE P1 — stewardship/W3ID external gate
+  #4   PARKED P2 — successor ontology on concrete semantic trigger only
 
 Semantic Modeling Pizza
-  #6   COMPLETE — governed SMO alignment
-  #8   COMPLETE — MOD competency-question adoption
+  no open issues
 
 Semantic Modeling Wine/Food
-  #3   COMPLETE — executable second-domain recommendation evidence
-  #5   COMPLETE — MOD competency-question adoption
+  no open issues
 ```
 
 ## Evidence rule
