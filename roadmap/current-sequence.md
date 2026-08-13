@@ -2,110 +2,131 @@
 
 This file records the current cross-repository dependency sequence. Repository-local backlogs remain authoritative for their own work.
 
-## 1. SKE bootstrap — complete
+The durable handover checkpoint for the current state is [SKE #22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22). This sequence should remain synchronized with that checkpoint and with the actual repository-local backlog state.
 
-The initial SKE governance baseline was reviewed and merged in [PR #2](https://github.com/GerhardBalz/semantic-knowledge-engineering/pull/2), and the repository is public.
+## 1. Initiative map and roadmap synchronization — current
 
-SKE remains an initiative/governance layer rather than an ontology or semantic owner of ESKA, SMO, or Pizza concepts.
+[SKE #21](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/21) is the initiative-level housekeeping gate.
 
-## 2. Shared documentation convention — complete
+Required outcome:
 
-The SKE Semantic Markdown convention has been adopted across the participating repositories:
+- keep the README initiative map complete;
+- maintain [the authoritative repository map](../architecture/repository-map.md);
+- distinguish conceptual repositories, reference examples and publication infrastructure;
+- keep `pizza-ontology` and `semantic-modeling-pizza` responsibilities explicit;
+- represent `semantic-modeling-wine-food` accurately while its bootstrap is incomplete;
+- point to repository-local backlog anchors rather than duplicating their implementation detail.
 
-- ESKA through #72 / PR #73;
-- SMO through PR #7;
-- Pizza through PR #69.
+Once this synchronization is reviewed and merged, #21 can be closed and the roadmap should continue to be maintained as repository state changes.
 
-Repository-specific documentation rules and justified literal/preformatted specimens remain owned locally.
+## 2. ESKA core 0.2.0 publication dependency — externally gated
 
-## 3. SMO persistent publication — complete
+The ESKA semantic and release work behind the SMO compatibility bridge is complete:
 
-The governed SMO v0.1.0 publication sequence tracked by SKE #3 is complete:
+- the core `0.2.0` SMO compatibility bridge was merged;
+- governed release `eska-v0.2.0` was published;
+- release evidence was recorded;
+- immutable historical releases remain untouched.
 
-1. current `https://w3id.org/smo` routing activated through `perma-id/w3id.org#6538`;
-2. current route externally verified in SMO CI;
-3. governed immutable repository release `smo-v0.1.0` published;
-4. immutable `https://w3id.org/smo/0.1.0` routing activated through `perma-id/w3id.org#6541`;
-5. current and immutable routes verified together;
-6. SMO publication state advanced to `version-active` only after successful live evidence;
-7. SMO #5, #9, #10 and SKE #3 closed complete.
-
-The published v0.1 ontology remains deliberately minimal:
+The remaining publication dependency is upstream:
 
 ```text
-smo:SemanticModel
-smo:ImplementationProjection
-SMO-owned object properties: 0
-SMO-owned datatype properties: 0
+perma-id/w3id.org#6543
+Add immutable ESKA core 0.2.0 redirects
 ```
 
-No immutable SMO or ESKA release was modified during publication.
+Repository-local completion gate: [ESKA #87](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/87).
 
-## 4. Cross-repository alignment decision — complete
+Dependent issues [ESKA #84](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/84) and [SMO #11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11) remain open until the immutable route is merged and externally live-verified.
 
-SMO #11 performed evidence-first analysis after publication became stable. The reviewed recommendation was merged in SKE PR #18.
+Do not create additional ESKA or SMO semantic work merely while waiting for this external dependency.
 
-The decision is:
+## 3. Pizza preservation/reference reconciliation — next independent work
+
+Current parent backlog: [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72).
+
+Two implementation lines are open:
+
+- [Pizza PR #73](https://github.com/GerhardBalz/pizza-ontology/pull/73) — older divergent URL/IRI classification line;
+- [Pizza PR #76](https://github.com/GerhardBalz/pizza-ontology/pull/76) — newer, more complete preservation/reference resolution line.
+
+Expected reconciliation:
+
+1. compare unique #73 content with #76;
+2. retain the stewardship/provenance governance gate recorded in Pizza #72;
+3. prefer #76 as the implementation line if no substantive #73 implementation is missing;
+4. close #73 as superseded only after unique requirements are safely retained;
+5. review and merge #76 when satisfied.
+
+Important publication gate:
+
+- initial stewardship/provenance outreach to Matthew Horridge has been sent;
+- wait for external feedback and assess it before submitting any Pizza W3ID registration;
+- `https://w3id.org/pizza-ontology/` must remain a preservation/reference PID, not a replacement Pizza ontology namespace;
+- do not name an external maintainer without explicit agreement.
+
+## 4. Semantic Modeling Pizza formalization — independent
+
+Proceed with [Semantic Modeling Pizza #4](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/4) independently of the ESKA W3ID dependency.
+
+Required direction:
+
+- align README and architecture with the SKE initiative map;
+- link SKE, SMO, Pizza Ontology and Wine/Food explicitly;
+- make ownership and non-ownership boundaries clear;
+- keep semantic model, implementation projection, runtime data, validation/inference evidence and agent contract distinct;
+- surface reusable findings upward to SKE/SMO through explicit review rather than silently generalizing them.
+
+## 5. Semantic Modeling Wine/Food bootstrap — independent
+
+Proceed with [Semantic Modeling Wine/Food #1](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues/1) after the higher-priority independent items above, or in parallel when useful.
+
+The repository exists but is bootstrap-pending. Bootstrap should reuse existing initiative evidence rather than restart research from zero.
+
+Recommended focus:
+
+- W3C OWL Wine + Food as the primary historical semantic-modeling reference pair;
+- preserve original authority and identity;
+- distinguish repository representations from semantic authority;
+- use SMO only where semantically justified;
+- keep Lehigh Wine Benchmark material as benchmark/execution evidence distinct from the Wine/Food teaching/reference model;
+- establish README, provenance/licensing baseline, minimal structure, one concrete SMO-oriented modeling path and deterministic validation.
+
+## 6. Preserve immutable and historical boundaries
+
+Across all current work:
+
+- do not modify or retag immutable `eska-v0.1.0`, `eska-v0.2.0` or `smo-v0.1.0`;
+- do not reopen SMO vocabulary merely because additional repositories exist;
+- do not add ESKA semantic terms merely while waiting for W3ID publication;
+- do not rewrite historical Pizza 2.0 ontology/version/entity IRIs;
+- do not claim authority over `co-ode.org`;
+- do not submit Pizza W3ID registration before stewardship feedback is assessed;
+- do not create a Travel repository merely because Travel exists in the reference corpus or ESKA examples;
+- do not treat `GerhardBalz/w3id.org` as a conceptual initiative repository.
+
+## Current backlog anchors
 
 ```text
-canonical reusable concept        smo:SemanticModel
-ESKA compatibility surface        eska:SemanticModel
-bridge                            owl:equivalentClass
-initial ESKA deprecation          no
-second namespace migration        no
-proven Pizza projections          JSON + OpenAPI
-projection class                  smo:ImplementationProjection
+SKE
+  #21  initiative repository map / roadmap synchronization
+  #22  active durable handover checkpoint
+
+SMO
+  #11  downstream SMO alignment completion gate
+
+ESKA
+  #84  parent SemanticModel alignment — semantic/release work complete
+  #87  immutable core 0.2.0 W3ID activation — waiting on upstream #6543
+
+Pizza Ontology
+  #72  preservation/reference identifiers and stewardship/W3ID lifecycle
+  PR #73 older divergent URL/IRI implementation line
+  PR #76 newer preservation/reference implementation line
+
+Semantic Modeling Pizza
+  #4   formalize as SKE reference example
+
+Semantic Modeling Wine/Food
+  #1   bootstrap repository
 ```
-
-Important negative boundary: semantic Mapping/Transformation, preservation distributions, OAK views, Applications/UX, generic ESKA Results and validation/profile artifacts do not become `smo:ImplementationProjection` merely because they are derived or implementation-facing.
-
-## 5. Repository-owned downstream adoption — current
-
-Two independent implementation tracks are now active.
-
-### ESKA #84 — next core minor compatibility bridge
-
-Implement the reviewed bridge only in the next governed ESKA core minor version:
-
-```turtle
-eska:SemanticModel owl:equivalentClass smo:SemanticModel .
-```
-
-Requirements:
-
-- preserve `eska:SemanticModel` and keep it non-deprecated initially;
-- keep `eska:usesSemanticModel` unchanged;
-- record the dependency on immutable SMO v0.1.0 with `dcterms:requires`;
-- do not add `owl:imports` merely by symmetry;
-- bump and publish the ESKA core version through the existing governed publication lifecycle;
-- keep immutable `eska-v0.1.0` untouched.
-
-### Pizza #74 — evidence-sidecar SMO adoption
-
-Adopt SMO typing in current repository-authored evidence/provenance only:
-
-- historical Pizza semantic source → `smo:SemanticModel`;
-- JSON concept catalog → `smo:ImplementationProjection`;
-- OpenAPI contract → `smo:ImplementationProjection`.
-
-Retain complementary ESKA, PROV-O, DCTERMS, PROF and SHACL evidence where already applicable. Do not edit the historical Pizza ontology or published preservation release assets merely to add architectural typing.
-
-## 6. SMO #11 completion gate
-
-SMO #11 remains open until both ESKA #84 and Pizza #74 are reviewed and complete.
-
-Only then close the downstream-alignment work and reassess whether any further reusable semantic-modeling vocabulary is justified by new evidence.
-
-## 7. Preserve immutable and historical boundaries
-
-During downstream implementation:
-
-- do not modify immutable `smo-v0.1.0`;
-- do not modify immutable `eska-v0.1.0`;
-- do not rewrite historical Pizza 2.0 semantics merely for symmetry;
-- keep Pizza successor-lineage issue #4 dormant until a genuine semantic-modernization requirement appears;
-- keep semantic ownership in the repository that owns the relevant concept or artifact.
-
-## Independent Pizza and ESKA work
-
-Repository-local proving grounds, tooling, publication, and preservation work continue independently unless they explicitly depend on this SMO alignment sequence.
