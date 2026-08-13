@@ -1,0 +1,34 @@
+name: LWBM network recovery probe
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/lwbm-network-recovery.yml'
+      - 'scripts/recover-lwbm-network.sh'
+      - 'landscape/lwbm-recovery.md'
+      - 'landscape/lwbm-artifact-register.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out SKE
+        uses: actions/checkout@v5
+
+      - name: Probe exact Lehigh LWBM targets
+        run: bash scripts/recover-lwbm-network.sh recovered/lwbm
+
+      - name: Show recovery manifest
+        run: cat recovered/lwbm/manifest.json
+
+      - name: Upload recovered evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: lwbm-network-recovery
+          path: recovered/lwbm
+          if-no-files-found: error
+          retention-days: 14
