@@ -2,97 +2,138 @@
 
 This file records the current cross-repository dependency sequence. Repository-local backlogs remain authoritative for their own work.
 
-The durable handover checkpoint is [SKE #22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22). The execution sequence originally recorded there has now been completed through the Wine/Food bootstrap; this file records the resulting current state and the next unresolved dependency.
+The durable handover checkpoint remains [SKE #22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22). The original execution sequence recorded there is complete. The sequence below is based on a fresh live backlog review after the Wine/Food bootstrap and ESKA/SMO publication closure.
 
-## 1. Completed handover sequence
+## 1. Backlog integrity — Pizza #72
 
-The independent sequence from SKE #22 is complete:
+[Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) contains the authoritative stewardship/provenance gate for the proposed Pizza preservation/reference W3ID namespace.
 
-1. SKE #21 — initiative repository map / roadmap synchronization — **complete** via reviewed SKE PR #23.
-2. Pizza PR #73 / #76 reconciliation — **complete**: #73 closed as superseded, #76 reviewed and merged; the stewardship gate remains in Pizza #72.
-3. Semantic Modeling Pizza #4 — **complete** via reviewed PR #5.
-4. Semantic Modeling Wine/Food #1 — **complete** via reviewed PR #2.
+Its own lifecycle requires:
 
-The external ESKA dependency also resolved while this sequence was in progress:
+```text
+receive and assess external stewardship/provenance feedback
+    ↓
+finalize W3ID registration decision
+    ↓
+upstream activation if adopted
+    ↓
+external verification
+    ↓
+publication/policy state active
+    ↓
+final regression
+    ↓
+close #72
+```
 
-- upstream `perma-id/w3id.org#6543` merged;
-- ESKA core 0.2.0 immutable routes were externally verified;
-- ESKA PR #93 synchronized the active publication evidence and was reviewed and merged;
-- ESKA #87 and #84 are complete;
-- SMO #11 is complete.
+The issue is currently closed even though this external lifecycle is not complete. A backlog-integrity comment records the discrepancy. The automated reopen action was blocked, so a manual **Reopen** action is required.
 
-## 2. Current active cross-repository dependency — Pizza stewardship feedback
+Until feedback is received and assessed:
 
-The remaining explicitly gated initiative work is [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72).
+- do not submit a Pizza W3ID PR;
+- do not name an external maintainer without explicit agreement;
+- keep `https://w3id.org/pizza-ontology/` strictly a preservation/reference PID proposal;
+- do not rewrite historical Pizza 2.0 ontology/version/entity IRIs.
 
-Repository-side preservation/reference preparation is complete enough to wait for external evidence. The governance gate remains:
+## 2. Cross-example semantic-modeling evidence — SKE #25
 
-- initial stewardship/provenance outreach to Matthew Horridge has been sent;
-- wait for external feedback and assess it before submitting any Pizza W3ID registration;
-- `https://w3id.org/pizza-ontology/` remains a preservation/reference PID, not a replacement Pizza ontology namespace;
-- do not name an external maintainer without explicit agreement.
+[SKE #25](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/25) is the current first independent P1 initiative item.
 
-Do not create a Pizza W3ID pull request merely because the local implementation is ready.
+It compares Semantic Modeling Pizza and Semantic Modeling Wine/Food before any additional SMO vocabulary is proposed.
 
-## 3. Reference-example state
+The review is captured in [`analysis/semantic-modeling-cross-example.md`](../analysis/semantic-modeling-cross-example.md).
 
-### Semantic Modeling Pizza
+Current decision direction:
 
-The repository is now a formal SKE reference example. Its architecture and ownership boundaries distinguish semantic models, implementation projections, runtime data, validation/inference evidence and agent contracts. Reusable findings should continue to be surfaced upward through explicit SKE/SMO review rather than silently generalized.
+- no general SMO vocabulary expansion is justified yet;
+- semantic authority/identity and source lineage recur across both domains and should be treated as SKE conventions using established vocabularies;
+- purpose/competency-question semantics recur conceptually, but Wine/Food still needs executable second-domain evidence before an SMO relation is considered;
+- explicit projection exclusions remain Pizza-only evidence;
+- operation signatures and evidence semantics remain execution-adjacent and must not be moved into SMO merely for symmetry;
+- `smo:ImplementationProjection` retains its narrow governed meaning and must not be inferred from derivation alone.
 
-### Semantic Modeling Wine/Food
+## 3. Semantic Modeling Pizza integrity — Pizza reference example #6
 
-The repository bootstrap is complete. It now has:
+[Semantic Modeling Pizza #6](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/6) is active.
 
-- an explicit SKE/SMO role and authority boundary;
-- historical W3C Wine/Food provenance without claiming ownership or redistributing source bytes;
-- a minimal machine-expressible SMO modeling path;
-- deterministic offline validation;
-- explicit repository-authored vs external-material licensing treatment;
-- a deliberate private-visibility decision.
+The Pizza reference example still contains pre-governance experimental `smo:` terms under:
 
-Future Wine/Food work should be driven by a concrete modeling or executable question rather than bootstrap symmetry.
+```text
+https://github.com/GerhardBalz/semantic-modeling-ontology#
+```
 
-## 4. Preserve immutable and historical boundaries
+while governed SMO v0.1 is:
 
-Across subsequent work:
+```text
+https://w3id.org/smo#
+```
 
-- do not modify or retag immutable `eska-v0.1.0`, `eska-v0.2.0` or `smo-v0.1.0`;
-- do not reopen SMO vocabulary without new semantic evidence;
-- do not add ESKA terms merely for cross-repository symmetry;
-- do not rewrite historical Pizza 2.0 ontology/version/entity IRIs;
-- do not claim authority over `co-ode.org` or the historical W3C Wine/Food namespaces;
-- do not submit Pizza W3ID registration before stewardship feedback is assessed;
-- do not create a Travel repository merely because Travel exists in the reference corpus or ESKA examples;
-- do not treat `GerhardBalz/w3id.org` as a conceptual initiative repository.
+with the deliberately minimal published classes `smo:SemanticModel` and `smo:ImplementationProjection`.
+
+The repository-local cleanup must:
+
+- use the governed SMO namespace only for governed terms;
+- move still-useful experimental concepts to a local namespace or established vocabularies;
+- protect the distinction with validation/tests;
+- feed reusable evidence back to SKE #25 rather than expanding SMO implicitly.
+
+## 4. Wine/Food second-domain executable evidence — proposed next local item
+
+The Wine/Food bootstrap is complete, but it has not yet implemented the executable evidence needed to resolve the recurring questions in SKE #25.
+
+The next local experiment should:
+
+- make the existing meal-course recommendation competency question machine-checkable;
+- exercise a purpose-specific pairing model in one deterministic query/validation/reasoning example;
+- test whether explicit projection exclusions are useful in this domain;
+- preserve lineage to both W3C Wine and Food source semantic models;
+- make an explicit positive or negative `smo:ImplementationProjection` decision;
+- report findings back to SKE #25.
+
+An automated attempt to create this Wine/Food issue was blocked by the GitHub write safety layer, so it is **proposed, not yet created**.
+
+## 5. Parked / trigger-based work
+
+### Pizza successor ontology — Pizza #4
+
+[Pizza #4](https://github.com/GerhardBalz/pizza-ontology/issues/4) remains open but intentionally parked. Revisit only when a concrete semantic modernization requirement requires changing ontology semantics, identity, or a governed successor namespace.
+
+Do not create a successor ontology merely to improve tooling or publication UX.
+
+### SMO
+
+No open SMO issue currently requires implementation. Do not expand the vocabulary until SKE #25 or another evidence review produces a narrow, standards-checked requirement.
+
+### ESKA
+
+No open ESKA issue currently requires implementation. Core 0.2.0 SMO alignment and immutable W3ID publication are complete.
 
 ## Current backlog anchors
 
 ```text
 SKE
-  #22  durable handover checkpoint; original execution sequence completed
+  #22  durable handover checkpoint
+  #25  ACTIVE — Pizza ↔ Wine/Food cross-example evidence review
 
 SMO
-  #11  COMPLETE
+  no active implementation issue
 
 ESKA
-  #84  COMPLETE
-  #87  COMPLETE
+  no active implementation issue
 
 Pizza Ontology
-  #72  ACTIVE — external stewardship/provenance feedback gate before W3ID submission
-  PR #73 CLOSED superseded
-  PR #76 MERGED
+  #72  SHOULD BE OPEN — external stewardship/W3ID lifecycle gate; manual reopen required
+  #4   PARKED — successor ontology only on concrete semantic trigger
 
 Semantic Modeling Pizza
-  #4   COMPLETE
+  #6   ACTIVE — align experimental SMO references with governed v0.1
 
 Semantic Modeling Wine/Food
-  #1   COMPLETE
+  no open issue; second-domain executable evidence issue proposed
 ```
 
-## Next sequencing decision
+## Sequencing rule
 
-There is no longer an incomplete independent implementation item in the sequence originally recorded by SKE #22.
+Proceed with SKE #25 and Semantic Modeling Pizza #6 independently of the Pizza #72 external gate.
 
-Until new evidence arrives on Pizza #72, the next initiative work should be selected deliberately from repository-local backlogs or from a newly justified cross-repository question. Do not manufacture work solely to keep the sequence moving.
+Do not manufacture new SMO or ESKA vocabulary while waiting. The next reusable vocabulary decision must come from demonstrated cross-domain evidence and an explicit check that established standards are insufficient.

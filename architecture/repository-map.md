@@ -4,124 +4,128 @@ This document is the authoritative initiative-level map of repositories particip
 
 SKE owns this cross-repository view: roles, boundaries, sequencing and links to local backlogs. Each participating repository remains authoritative for its own semantics, implementation, publication state and repository-local work.
 
-## Repository categories
+## Initiative / governance
 
-### Initiative / governance
+### `GerhardBalz/semantic-knowledge-engineering`
 
-#### `GerhardBalz/semantic-knowledge-engineering`
-
-**Purpose:** Provide the initiative-level architecture, shared conventions, cross-repository decisions, dependency view and roadmap.
+**Purpose:** Initiative-level architecture, shared conventions, cross-repository decisions, dependency view and roadmap.
 
 **Semantic ownership:** None by default. SKE does not mint an `ske:` vocabulary merely to describe initiative governance.
 
-**Important relationships:** Coordinates SMO, ESKA, preservation/reference projects and semantic-modeling examples without taking their local ownership.
+**Lifecycle/status:** Public; governance baseline and repository map established. The original SKE #22 execution sequence is complete. SKE #25 is the current cross-example semantic-modeling evidence review.
 
-**Lifecycle/status:** Public; governance baseline and authoritative repository map established. SKE #22 remains the durable handover checkpoint while the roadmap records current state.
+**Backlog:**
 
-**Authoritative backlog:** [SKE issues](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues), with [#22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22) as the current durable handover checkpoint.
+- [SKE #22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22) — durable handover checkpoint;
+- [SKE #25](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/25) — active Pizza ↔ Wine/Food evidence review before any further SMO expansion.
 
-### Semantic foundations
+## Semantic foundations
 
-#### `GerhardBalz/semantic-modeling-ontology`
+### `GerhardBalz/semantic-modeling-ontology`
 
-**Purpose:** Provide a small, standards-aligned ontology for authoritative semantic models and their non-authoritative implementation projections.
+**Purpose:** A small, standards-aligned ontology for authoritative semantic models and their non-authoritative implementation projections.
 
-**Semantic ownership:** `smo:SemanticModel` and `smo:ImplementationProjection`, plus any future vocabulary added only when justified by evidence.
+**Semantic ownership:** Governed SMO v0.1 currently owns `smo:SemanticModel` and `smo:ImplementationProjection`. Additional vocabulary requires explicit evidence and governance.
 
-**Important relationships:** Canonical reusable semantic-modeling concepts are consumed by ESKA and reference examples. ESKA preserves its compatibility surface through `eska:SemanticModel owl:equivalentClass smo:SemanticModel`.
+**Important relationships:** ESKA uses `smo:SemanticModel` as the canonical reusable concept while preserving its compatibility surface. Reference examples must distinguish published SMO terms from local experiments.
 
-**Lifecycle/status:** Public; v0.1.0 current and immutable W3ID publication complete. Downstream Pizza and ESKA alignment work tracked by SMO #11 is complete.
+**Lifecycle/status:** Public; v0.1.0 and immutable W3ID publication complete; downstream alignment through completed SMO #11 is complete. No active implementation issue currently justifies vocabulary expansion.
 
-**Authoritative backlog:** [SMO issues](https://github.com/GerhardBalz/semantic-modeling-ontology/issues). Completed alignment record: [#11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11).
+## Execution architecture
 
-### Execution architecture
-
-#### `GerhardBalz/executable-semantic-knowledge-architecture`
+### `GerhardBalz/executable-semantic-knowledge-architecture`
 
 **Purpose:** Define and demonstrate an architecture in which execution, validation, inference, services, agents and deployment remain connected to authoritative semantics.
 
-**Semantic ownership:** ESKA execution architecture and ESKA-owned concepts. It does not duplicate reusable semantic-modeling concepts merely for symmetry.
+**Semantic ownership:** ESKA execution architecture and ESKA-owned concepts. Execution signatures or evidence structures must not migrate into SMO merely for cross-repository symmetry.
 
-**Important relationships:** Uses SMO for the canonical reusable `SemanticModel` concept while preserving ESKA compatibility. Pizza and Wine/Food provide proving-ground evidence.
+**Lifecycle/status:** Public; core 0.2.0 SMO compatibility bridge, governed release, immutable W3ID routes and external verification are complete. No active implementation issue currently requires work.
 
-**Lifecycle/status:** Public; core 0.2.0 compatibility bridge, governed `eska-v0.2.0` release, immutable W3ID routes and external route verification are complete.
+## Reference / preservation projects
 
-**Authoritative backlog:** [ESKA issues](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues). Completed alignment/publication gates: [#84](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/84) and [#87](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/87).
-
-### Reference / preservation projects
-
-#### `GerhardBalz/pizza-ontology`
+### `GerhardBalz/pizza-ontology`
 
 **Purpose:** Preserve and reference the historical Pizza ontology, recover useful engineering evidence around it, and provide a proving ground for publication, resolution, validation and execution concerns.
 
-**Semantic ownership:** Historical Pizza semantics remain source-owned. Repository-authored preservation, provenance, validation and implementation evidence is owned locally. The repository does not claim authority over `co-ode.org` and does not rewrite historical Pizza 2.0 identity merely to improve resolution.
+**Semantic ownership:** Historical Pizza semantics remain source-owned. The repository does not claim authority over `co-ode.org` and does not rewrite Pizza 2.0 ontology/version/entity identity merely to improve resolution.
 
-**Important relationships:** Supplies source material and evidence to ESKA and to the separate Semantic Modeling Pizza reference example. Proposed W3ID identifiers are preservation/reference PIDs, not replacement Pizza ontology namespaces.
+**Lifecycle/status:** Public; preservation/reference implementation is complete through PR #76. The stewardship/provenance gate recorded in Pizza #72 still requires external feedback before any W3ID submission. GitHub currently shows #72 closed even though its own lifecycle is incomplete; a backlog-integrity comment was added and a manual reopen is required because the automated reopen action was blocked.
 
-**Lifecycle/status:** Public; SMO evidence-sidecar adoption and preservation/reference implementation are complete. Pizza #72 remains active solely around the external stewardship/provenance feedback gate and subsequent W3ID lifecycle decision. PR #73 is closed as superseded; PR #76 is merged.
+**Backlog:**
 
-**Authoritative backlog:** [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72). No Pizza W3ID registration should be submitted until external feedback is received and assessed.
+- [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) — **should be open**; external stewardship/provenance and W3ID lifecycle gate;
+- [Pizza #4](https://github.com/GerhardBalz/pizza-ontology/issues/4) — parked trigger-based evaluation of a separate successor ontology lineage; revisit only on a concrete semantic modernization requirement.
 
-### Semantic modeling reference examples
+## Semantic modeling reference examples
 
-#### `GerhardBalz/semantic-modeling-pizza`
+### `GerhardBalz/semantic-modeling-pizza`
 
-**Purpose:** Demonstrate SKE/SMO semantic-modeling distinctions using Pizza as a concrete reference domain.
+**Purpose:** Demonstrate semantic-modeling distinctions using Pizza as a concrete reference domain without becoming the authority for the historical Pizza ontology.
 
-**Semantic ownership:** Example-local modeling and projection evidence only. It does not own or replace the historical Pizza ontology.
+**Important relationships:** The example distinguishes semantic models, purpose-specific modeling, runtime data, validation/inference evidence and operational artifacts. Reusable findings are reviewed through SKE before promotion into SMO or ESKA.
 
-**Important relationships:** Explicitly consumes ideas and artifacts from SKE, SMO and Pizza Ontology while keeping semantic model, implementation projection, runtime data, validation/inference evidence and agent contract distinct. Reusable findings should be surfaced upward through explicit SKE/SMO review.
+**Lifecycle/status:** Private; formal SKE reference-example baseline complete. A live integrity issue remains: current artifacts still contain pre-governance experimental `smo:` terms under the old GitHub namespace while governed SMO v0.1 uses `https://w3id.org/smo#` with a deliberately minimal vocabulary.
 
-**Lifecycle/status:** Formal SKE reference-example baseline complete via Semantic Modeling Pizza #4 / reviewed PR #5. Repository visibility remains a deliberate governance decision.
+**Backlog:**
 
-**Authoritative backlog:** [Semantic Modeling Pizza issues](https://github.com/GerhardBalz/semantic-modeling-pizza/issues). Completed formalization record: [#4](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/4).
+- [Semantic Modeling Pizza #6](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/6) — active; align current artifacts with governed SMO v0.1 and isolate experimental vocabulary;
+- repository `BACKLOG.md` — candidate cross-example questions on competency questions, projection scope, signatures, evidence/provenance and visibility.
 
-#### `GerhardBalz/semantic-modeling-wine-food`
+### `GerhardBalz/semantic-modeling-wine-food`
 
-**Purpose:** Provide a semantic-modeling reference example based primarily on the W3C OWL Wine and Food teaching/reference material while preserving original authority and identity.
+**Purpose:** Test the semantic-modeling reference-example pattern against the W3C OWL Wine and Food teaching/reference domain while preserving external authority and identity.
 
-**Semantic ownership:** Example-local modeling evidence only. Original Wine/Food semantic authority remains external. Repository representations must not be confused with semantic authority.
+**Important relationships:** The purpose-specific Wine/Food model derives from two external semantic models and therefore provides independent evidence for source-lineage and competency-question questions raised by Pizza.
 
-**Important relationships:** Builds on existing SKE reference-corpus research and ESKA Wine/Food import-closure evidence. Lehigh Wine Benchmark material remains benchmark/execution evidence distinct from the historical Wine/Food teaching/reference model.
+**Lifecycle/status:** Private; bootstrap complete. It correctly uses governed `https://w3id.org/smo#` and currently introduces only `smo:SemanticModel`. No implementation projection or executable recommendation proving ground exists yet.
 
-**Lifecycle/status:** Bootstrap complete via Wine/Food #1 / reviewed PR #2. The baseline records provenance and licensing boundaries without redistributing historical ontology bytes, includes a minimal SMO-oriented model and deterministic validation, and deliberately keeps repository visibility private for now.
+**Backlog:** No open issue. The next proposed local experiment is to make the existing meal-course competency question machine-checkable, exercise one deterministic recommendation/query/validation path, test whether explicit projection exclusions are useful, and report the evidence to SKE #25. The automated attempt to create that issue was blocked, so it is not yet a GitHub issue.
 
-**Authoritative backlog:** [Semantic Modeling Wine/Food issues](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues). Completed bootstrap record: [#1](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues/1).
+## Supporting publication infrastructure
 
-### Supporting publication infrastructure
+### `GerhardBalz/w3id.org`
 
-#### `GerhardBalz/w3id.org`
+**Purpose:** Working fork for redirect changes destined for upstream `perma-id/w3id.org`.
 
-**Purpose:** Provide a working fork for preparing redirect changes destined for the upstream `perma-id/w3id.org` service.
+**Semantic ownership:** None. This is supporting infrastructure, not a conceptual SKE repository.
 
-**Semantic ownership:** None. This repository is infrastructure and is not a conceptual SKE initiative repository.
-
-**Important relationships:** Supports persistent publication for SMO, ESKA and potentially other initiative artifacts after repository-local governance gates are satisfied.
-
-**Lifecycle/status:** Supporting fork. ESKA core 0.2.0 upstream routing is merged and externally verified. Future publication work remains governed by the repository that owns each identifier lifecycle.
-
-**Authoritative backlog:** Publication work remains governed by the repository that owns the identifier lifecycle and by the corresponding upstream W3ID pull request.
+**Lifecycle/status:** ESKA core 0.2.0 upstream routing is merged and externally verified. Future publication work remains governed by the repository that owns each identifier lifecycle.
 
 ## Boundary: Pizza Ontology vs Semantic Modeling Pizza
 
-The separation is intentional and should remain explicit.
+The separation is intentional:
 
-`pizza-ontology` is concerned with preservation, referenceability, historical identity, provenance and proving-ground engineering around the Pizza ontology. It must avoid silently modernizing or replacing source-owned semantics.
+- `pizza-ontology` owns preservation/reference engineering around historical Pizza identity;
+- `semantic-modeling-pizza` owns example-local semantic-modeling experiments and must not become the authority for historical Pizza semantics.
 
-`semantic-modeling-pizza` is concerned with the modeling architecture demonstrated using Pizza: which artifact is authoritative semantic content, which artifacts are implementation projections, which data is runtime evidence, and how validation, inference and agent-facing contracts remain distinct.
-
-The reference example may consume Pizza artifacts, but it does not become their semantic authority.
+A local cache, implementation projection, runtime artifact or agent contract never becomes the historical ontology merely because it is derived from it.
 
 ## Current backlog anchors
 
-The initiative-level sequence points to repository-owned items rather than duplicating their implementation detail:
+```text
+SKE
+  #22  durable handover checkpoint
+  #25  ACTIVE — cross-example Pizza ↔ Wine/Food evidence review
 
-- durable handover checkpoint — [SKE #22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22)
-- Pizza preservation/reference lifecycle — [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) — active external-feedback gate
-- completed SMO downstream alignment — [SMO #11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11)
-- completed ESKA SemanticModel alignment — [ESKA #84](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/84)
-- completed ESKA core 0.2.0 W3ID activation — [ESKA #87](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/87)
-- completed Semantic Modeling Pizza formalization — [Semantic Modeling Pizza #4](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/4)
-- completed Semantic Modeling Wine/Food bootstrap — [Semantic Modeling Wine/Food #1](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues/1)
+SMO
+  no active implementation issue
 
-Possible future examples such as Travel remain candidates only. They are not part of the repository map until a repository actually exists and has an explicit initiative role.
+ESKA
+  no active implementation issue
+
+Pizza Ontology
+  #72  SHOULD BE OPEN — stewardship/W3ID external gate; manual reopen required
+  #4   PARKED — successor ontology only on concrete semantic trigger
+
+Semantic Modeling Pizza
+  #6   ACTIVE — governed SMO alignment / experimental vocabulary isolation
+
+Semantic Modeling Wine/Food
+  no open issue; second-domain executable evidence issue proposed
+```
+
+## Evidence rule
+
+Do not create reusable SMO or ESKA vocabulary merely because a concept appears in one reference example. Prefer established standards first, require independent cross-domain evidence, and keep ownership boundaries explicit.
+
+See [the current sequence](../roadmap/current-sequence.md) and [the Pizza ↔ Wine/Food evidence review](../analysis/semantic-modeling-cross-example.md).
