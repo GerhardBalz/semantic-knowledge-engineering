@@ -16,9 +16,9 @@ SKE owns this cross-repository view: roles, boundaries, sequencing and links to 
 
 **Important relationships:** Coordinates SMO, ESKA, preservation/reference projects and semantic-modeling examples without taking their local ownership.
 
-**Lifecycle/status:** Public; governance baseline complete; initiative map and sequence maintained continuously.
+**Lifecycle/status:** Public; governance baseline and authoritative repository map established. SKE #22 remains the durable handover checkpoint while the roadmap records current state.
 
-**Authoritative backlog:** [SKE issues](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues), especially [#21](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/21) for map/roadmap synchronization and [#22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22) for the active durable handover checkpoint.
+**Authoritative backlog:** [SKE issues](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues), with [#22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22) as the current durable handover checkpoint.
 
 ### Semantic foundations
 
@@ -28,11 +28,11 @@ SKE owns this cross-repository view: roles, boundaries, sequencing and links to 
 
 **Semantic ownership:** `smo:SemanticModel` and `smo:ImplementationProjection`, plus any future vocabulary added only when justified by evidence.
 
-**Important relationships:** Canonical reusable semantic-modeling concepts are consumed by ESKA and reference examples. ESKA preserves its compatibility surface through the reviewed `eska:SemanticModel owl:equivalentClass smo:SemanticModel` bridge.
+**Important relationships:** Canonical reusable semantic-modeling concepts are consumed by ESKA and reference examples. ESKA preserves its compatibility surface through `eska:SemanticModel owl:equivalentClass smo:SemanticModel`.
 
-**Lifecycle/status:** Public; v0.1.0 current and immutable W3ID publication complete. Downstream-alignment completion remains gated by ESKA publication closure.
+**Lifecycle/status:** Public; v0.1.0 current and immutable W3ID publication complete. Downstream Pizza and ESKA alignment work tracked by SMO #11 is complete.
 
-**Authoritative backlog:** [SMO #11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11).
+**Authoritative backlog:** [SMO issues](https://github.com/GerhardBalz/semantic-modeling-ontology/issues). Completed alignment record: [#11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11).
 
 ### Execution architecture
 
@@ -44,9 +44,9 @@ SKE owns this cross-repository view: roles, boundaries, sequencing and links to 
 
 **Important relationships:** Uses SMO for the canonical reusable `SemanticModel` concept while preserving ESKA compatibility. Pizza and Wine/Food provide proving-ground evidence.
 
-**Lifecycle/status:** Public; core 0.2.0 semantic compatibility bridge and governed release complete. Immutable core 0.2.0 W3ID activation remains the publication dependency.
+**Lifecycle/status:** Public; core 0.2.0 compatibility bridge, governed `eska-v0.2.0` release, immutable W3ID routes and external route verification are complete.
 
-**Authoritative backlog:** [ESKA #84](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/84) and [ESKA #87](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/87). Upstream dependency: `perma-id/w3id.org#6543`.
+**Authoritative backlog:** [ESKA issues](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues). Completed alignment/publication gates: [#84](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/84) and [#87](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/87).
 
 ### Reference / preservation projects
 
@@ -58,9 +58,9 @@ SKE owns this cross-repository view: roles, boundaries, sequencing and links to 
 
 **Important relationships:** Supplies source material and evidence to ESKA and to the separate Semantic Modeling Pizza reference example. Proposed W3ID identifiers are preservation/reference PIDs, not replacement Pizza ontology namespaces.
 
-**Lifecycle/status:** Public; SMO evidence-sidecar adoption complete. Preservation/reference resolution work is active through Pizza #72 and PR #76, with stewardship/provenance feedback required before any Pizza W3ID registration is submitted.
+**Lifecycle/status:** Public; SMO evidence-sidecar adoption and preservation/reference implementation are complete. Pizza #72 remains active solely around the external stewardship/provenance feedback gate and subsequent W3ID lifecycle decision. PR #73 is closed as superseded; PR #76 is merged.
 
-**Authoritative backlog:** [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72); current implementation line [PR #76](https://github.com/GerhardBalz/pizza-ontology/pull/76); older divergent line [PR #73](https://github.com/GerhardBalz/pizza-ontology/pull/73) pending reconciliation.
+**Authoritative backlog:** [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72). No Pizza W3ID registration should be submitted until external feedback is received and assessed.
 
 ### Semantic modeling reference examples
 
@@ -72,9 +72,9 @@ SKE owns this cross-repository view: roles, boundaries, sequencing and links to 
 
 **Important relationships:** Explicitly consumes ideas and artifacts from SKE, SMO and Pizza Ontology while keeping semantic model, implementation projection, runtime data, validation/inference evidence and agent contract distinct. Reusable findings should be surfaced upward through explicit SKE/SMO review.
 
-**Lifecycle/status:** Repository exists; formal SKE reference-example alignment is active.
+**Lifecycle/status:** Formal SKE reference-example baseline complete via Semantic Modeling Pizza #4 / reviewed PR #5. Repository visibility remains a deliberate governance decision.
 
-**Authoritative backlog:** [Semantic Modeling Pizza #4](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/4).
+**Authoritative backlog:** [Semantic Modeling Pizza issues](https://github.com/GerhardBalz/semantic-modeling-pizza/issues). Completed formalization record: [#4](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/4).
 
 #### `GerhardBalz/semantic-modeling-wine-food`
 
@@ -84,9 +84,9 @@ SKE owns this cross-repository view: roles, boundaries, sequencing and links to 
 
 **Important relationships:** Builds on existing SKE reference-corpus research and ESKA Wine/Food import-closure evidence. Lehigh Wine Benchmark material remains benchmark/execution evidence distinct from the historical Wine/Food teaching/reference model.
 
-**Lifecycle/status:** Repository created but bootstrap-pending; no baseline should be inferred until the repository-local bootstrap is completed.
+**Lifecycle/status:** Bootstrap complete via Wine/Food #1 / reviewed PR #2. The baseline records provenance and licensing boundaries without redistributing historical ontology bytes, includes a minimal SMO-oriented model and deterministic validation, and deliberately keeps repository visibility private for now.
 
-**Authoritative backlog:** [Semantic Modeling Wine/Food #1](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues/1).
+**Authoritative backlog:** [Semantic Modeling Wine/Food issues](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues). Completed bootstrap record: [#1](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues/1).
 
 ### Supporting publication infrastructure
 
@@ -98,7 +98,7 @@ SKE owns this cross-repository view: roles, boundaries, sequencing and links to 
 
 **Important relationships:** Supports persistent publication for SMO, ESKA and potentially other initiative artifacts after repository-local governance gates are satisfied.
 
-**Lifecycle/status:** Supporting fork. Upstream merge and external live verification, rather than the fork itself, determine publication completion.
+**Lifecycle/status:** Supporting fork. ESKA core 0.2.0 upstream routing is merged and externally verified. Future publication work remains governed by the repository that owns each identifier lifecycle.
 
 **Authoritative backlog:** Publication work remains governed by the repository that owns the identifier lifecycle and by the corresponding upstream W3ID pull request.
 
@@ -114,15 +114,14 @@ The reference example may consume Pizza artifacts, but it does not become their 
 
 ## Current backlog anchors
 
-The initiative-level sequence points to these repository-owned items rather than duplicating their implementation detail:
+The initiative-level sequence points to repository-owned items rather than duplicating their implementation detail:
 
-- SKE initiative map / roadmap synchronization — [SKE #21](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/21)
 - durable handover checkpoint — [SKE #22](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/22)
-- SMO downstream-alignment completion gate — [SMO #11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11)
-- ESKA parent SemanticModel alignment — [ESKA #84](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/84)
-- ESKA immutable core 0.2.0 W3ID activation — [ESKA #87](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/87)
-- Pizza preservation/reference lifecycle — [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72)
-- Semantic Modeling Pizza formalization — [Semantic Modeling Pizza #4](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/4)
-- Semantic Modeling Wine/Food bootstrap — [Semantic Modeling Wine/Food #1](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues/1)
+- Pizza preservation/reference lifecycle — [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) — active external-feedback gate
+- completed SMO downstream alignment — [SMO #11](https://github.com/GerhardBalz/semantic-modeling-ontology/issues/11)
+- completed ESKA SemanticModel alignment — [ESKA #84](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/84)
+- completed ESKA core 0.2.0 W3ID activation — [ESKA #87](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture/issues/87)
+- completed Semantic Modeling Pizza formalization — [Semantic Modeling Pizza #4](https://github.com/GerhardBalz/semantic-modeling-pizza/issues/4)
+- completed Semantic Modeling Wine/Food bootstrap — [Semantic Modeling Wine/Food #1](https://github.com/GerhardBalz/semantic-modeling-wine-food/issues/1)
 
 Possible future examples such as Travel remain candidates only. They are not part of the repository map until a repository actually exists and has an explicit initiative role.
