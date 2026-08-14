@@ -12,7 +12,7 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** None by default. SKE does not mint an `ske:` vocabulary merely to describe governance.
 
-**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly.
+**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly.
 
 ## Semantic foundations
 
@@ -46,9 +46,9 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** Historical Pizza semantics remain source-owned. The repository does not claim authority over `co-ode.org` or rewrite Pizza 2.0 ontology/version/entity identity merely to improve resolution.
 
-**Lifecycle/status:** Public. [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) is the sole active P1 in the audited initiative backlog and remains the external stewardship/provenance + W3ID lifecycle gate. No Pizza W3ID submission occurs before external feedback is received and assessed.
+**Lifecycle/status:** Public. [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) is the sole active public P1 in the audited initiative backlog and remains the external stewardship/provenance + W3ID lifecycle gate. No Pizza W3ID submission occurs before external feedback is received and assessed.
 
-Initial outreach to Matthew Horridge was sent on 12 August 2026. A connected-mailbox check on 13 August 2026 found no reply concerning provenance, present-day stewardship, or the proposed preservation/reference PID namespace.
+One-to-one stewardship contact and follow-up status are intentionally not tracked in this public map; only publication-safe technical or governance outcomes belong here.
 
 **Backlog:** [Pizza #4](https://github.com/GerhardBalz/pizza-ontology/issues/4) remains parked P2 until a concrete semantic-modernization requirement justifies a successor ontology lineage.
 
@@ -96,10 +96,10 @@ Initial outreach to Matthew Horridge was sent on 12 August 2026. A connected-mai
 
 ```text
 SKE
-  #32  ACTIVE — durable handover
-  #29  COMPLETE after final synchronization
-  #27  SUPERSEDED
-  #22  SUPERSEDED
+  #32  ACTIVE — durable public handover
+  #29  COMPLETE — public reference visibility decision
+  #27  SUPERSEDED — historical handover
+  #22  SUPERSEDED — historical handover
 
 SMO
   no open issues
