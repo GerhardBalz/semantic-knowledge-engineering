@@ -17,6 +17,16 @@ This principle originated as a defining ESKA invariant, but the implemented Pizz
 
 The principle therefore governs the relationship between semantic modeling and execution without moving ESKA's detailed execution semantics into SKE.
 
+## Informal illustration: 42
+
+As a deliberately non-normative intuition:
+
+> **“42” is data; the missing question is semantics.**
+
+An answer may be computed successfully and still be unusable as knowledge when the question, context, and trace of how the answer was produced have been lost. In architectural terms, the relationship between semantic context, execution, and result needs to remain recoverable.
+
+This is only an explanatory aside—not evidence for the principle, not a formal data-to-knowledge model, and not new SKE/SMO/ESKA vocabulary.
+
 ## Consequences
 
 Architectures following this principle should prefer explicit machine-readable continuity from semantic source to operational result. Implementation convenience alone is not sufficient justification for replacing semantic identifiers, duplicating semantic ownership, or reducing meaning to undocumented runtime behavior.
