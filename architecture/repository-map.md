@@ -86,7 +86,7 @@ One-to-one stewardship contact and follow-up status are intentionally not tracke
 
 **Purpose:** Test SKE/SMO/ESKA semantic continuity against an operator-controlled agentic network-operations architecture spanning intent translation, agent orchestration, governed tool execution, validation, enforcement, observability and audit.
 
-**Semantic ownership:** This repository does not create a telecom ontology or claim ownership of 3GPP, O-RAN, ETSI, NGMN, TM Forum, MCP or other externally defined concepts. Its technology-neutral mapping is an independent architectural interpretation.
+**Semantic ownership:** This repository does not create a telecom ontology or claim ownership of 3GPP, O-RAN, ETSI, NGMN, MCP or other externally defined concepts. Its technology-neutral mapping is an independent architectural interpretation.
 
 **Lifecycle/status:** Public. The bootstrap baseline was reviewed and merged via SANO PR #1. MCP is treated primarily as one possible realization of the governed agent tool plane / mediation boundary rather than as the whole Agentic Network Operations Platform.
 
