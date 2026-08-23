@@ -12,7 +12,9 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** None by default. SKE does not mint an `ske:` vocabulary merely to describe governance.
 
-**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly.
+**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly; SANO was subsequently added as an industrial architecture/reference-evidence case.
+
+**Current backlog:** [SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) is active P1 to refine and adopt the initiative-level semantic-continuity principle **“Semantics must remain explicit through execution.”**
 
 ## Semantic foundations
 
@@ -36,7 +38,7 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Lifecycle/status:** Public; core 0.2.0 SMO alignment and immutable W3ID publication complete.
 
-**Current backlog:** No open issues.
+**Current backlog:** No open issues. Downstream documentation should follow the reviewed initiative-level semantic-continuity wording without changing immutable releases or introducing new vocabulary.
 
 ## Reference / preservation projects
 
@@ -46,7 +48,7 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** Historical Pizza semantics remain source-owned. The repository does not claim authority over `co-ode.org` or rewrite Pizza 2.0 ontology/version/entity identity merely to improve resolution.
 
-**Lifecycle/status:** Public. [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) is the sole active public P1 in the audited initiative backlog and remains the external stewardship/provenance + W3ID lifecycle gate. No Pizza W3ID submission occurs before external feedback is received and assessed.
+**Lifecycle/status:** Public. [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) remains the active external stewardship/provenance + W3ID lifecycle gate. No Pizza W3ID submission occurs before external feedback is received and assessed.
 
 One-to-one stewardship contact and follow-up status are intentionally not tracked in this public map; only publication-safe technical or governance outcomes belong here.
 
@@ -78,6 +80,20 @@ One-to-one stewardship contact and follow-up status are intentionally not tracke
 
 **Current backlog:** No open issues.
 
+## Industrial architecture / reference evidence
+
+### `GerhardBalz/semantic-agentic-network-operations`
+
+**Purpose:** Test SKE/SMO/ESKA semantic continuity against an operator-controlled agentic network-operations architecture spanning intent translation, agent orchestration, governed tool execution, validation, enforcement, observability and audit.
+
+**Semantic ownership:** This repository does not create a telecom ontology or claim ownership of 3GPP, O-RAN, ETSI, NGMN, TM Forum, MCP or other externally defined concepts. Its technology-neutral mapping is an independent architectural interpretation.
+
+**Lifecycle/status:** Public. The bootstrap baseline was reviewed and merged via SANO PR #1. MCP is treated primarily as one possible realization of the governed agent tool plane / mediation boundary rather than as the whole Agentic Network Operations Platform.
+
+**Current evidence:** the repository provides an industrial reference case for testing whether authoritative meaning and lineage can remain explicit from intent through operational projections and tool transactions to evidence and provenance.
+
+**Current backlog:** No open issues.
+
 ## Supporting publication infrastructure
 
 ### `GerhardBalz/w3id.org`
@@ -96,6 +112,7 @@ One-to-one stewardship contact and follow-up status are intentionally not tracke
 
 ```text
 SKE
+  #39  ACTIVE P1 — semantic-continuity principle refinement
   #32  ACTIVE — durable public handover
   #29  COMPLETE — public reference visibility decision
   #27  SUPERSEDED — historical handover
@@ -116,6 +133,9 @@ Semantic Modeling Pizza
 
 Semantic Modeling Wine/Food
   no open issues
+
+Semantic Agentic Network Operations
+  no open issues — reviewed bootstrap baseline merged
 ```
 
 ## Evidence rule
