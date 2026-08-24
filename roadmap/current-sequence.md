@@ -4,13 +4,25 @@ This file records the current cross-repository dependency sequence. Repository-l
 
 The current durable public handover checkpoint is [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32). SKE #27 and #22 are superseded historical handovers.
 
-## 1. Active P1 — Pizza preservation/reference stewardship gate
+## 1. Active independent P1 — semantic-continuity principle
 
-[Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) is the only active public P1 in the audited initiative backlog.
+[SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) is active independent initiative-level work to refine the primary continuity principle to:
 
-The repository-side preservation/reference implementation is substantially prepared, but the proposed `https://w3id.org/pizza-ontology/` namespace remains gated by external stewardship/provenance feedback.
+> **Semantics must remain explicit through execution.**
 
-Until external feedback is received and assessed:
+The principle should make preservation, traceability, inspectability and provenance explicit while avoiding a requirement that every runtime artifact reproduce the complete authoritative semantic model.
+
+The earlier wording **“Execution must not sever semantics”** may remain as explanatory shorthand, but should not remain the normative definition after #39 is reviewed and adopted.
+
+Do not introduce new SMO or ESKA vocabulary merely because the principle wording changes. Historical issues and immutable releases remain historical rather than being rewritten.
+
+## 2. Active external P1 — Pizza preservation/reference stewardship gate
+
+[Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) remains externally blocked on stewardship/provenance feedback.
+
+The repository-side preservation/reference implementation is substantially prepared, but the proposed `https://w3id.org/pizza-ontology/` namespace remains gated by that external feedback.
+
+Until feedback is received and assessed:
 
 - do not submit a Pizza W3ID PR;
 - do not name an external maintainer without explicit agreement;
@@ -19,7 +31,31 @@ Until external feedback is received and assessed:
 
 When publication-safe feedback or a stewardship outcome is available, assess and record the technical/governance consequence in Pizza #72 before any W3ID submission. One-to-one contact and follow-up status are not part of the public initiative backlog.
 
-## 2. Public semantic-modeling reference baseline — complete
+## 3. Semantic Agentic Network Operations baseline — complete
+
+The public [`semantic-agentic-network-operations`](https://github.com/GerhardBalz/semantic-agentic-network-operations) repository is the seventh initiative/reference repository.
+
+Its reviewed bootstrap baseline was merged via SANO PR #1. It provides an industrial architecture/reference-evidence case for testing semantic continuity through:
+
+```text
+intent
+  ↓
+translation / orchestration
+  ↓
+governed tool plane
+  ↓
+validation / enforcement
+  ↓
+execution
+  ↓
+evidence / provenance
+```
+
+The repository deliberately treats MCP primarily as one possible realization of the governed agent tool plane / mediation boundary rather than as the whole Agentic Network Operations Platform. It is not a telecom ontology or standards proposal.
+
+No repository-local SANO issue is currently open.
+
+## 4. Public semantic-modeling reference baseline — complete
 
 [SKE #29](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/29) decided to publish both semantic-modeling reference examples together.
 
@@ -37,7 +73,7 @@ The public repositories are:
 
 Visibility does not imply authority over historical Pizza or W3C Wine/Food namespaces, endorsement by their original projects, or standardization of local experimental concepts.
 
-## 3. Completed cross-example + standards cycle
+## 5. Completed cross-example + standards cycle
 
 The following sequence is complete:
 
@@ -62,16 +98,17 @@ Final result:
 
 See [`analysis/semantic-modeling-cross-example.md`](../analysis/semantic-modeling-cross-example.md).
 
-## 4. Parked / trigger-based work
+## 6. Parked / trigger-based work
 
 [Pizza #4](https://github.com/GerhardBalz/pizza-ontology/issues/4) remains parked P2 until a concrete semantic-modernization requirement justifies a successor ontology lineage.
 
-No active issue exists in SMO, ESKA, Semantic Modeling Pizza, or Semantic Modeling Wine/Food.
+No active issue exists in SMO, ESKA, Semantic Modeling Pizza, Semantic Modeling Wine/Food, or Semantic Agentic Network Operations.
 
 ## Current backlog anchors
 
 ```text
 SKE
+  #39  ACTIVE P1 — semantic-continuity principle refinement
   #32  ACTIVE — durable public handover checkpoint
   #29  COMPLETE — reference visibility decision
   #27  SUPERSEDED — historical handover
@@ -92,10 +129,13 @@ Semantic Modeling Pizza
 
 Semantic Modeling Wine/Food
   no open issues
+
+Semantic Agentic Network Operations
+  no open issues — reviewed bootstrap baseline merged
 ```
 
 ## Sequencing rule
 
-Start with Pizza #72 by checking for publication-safe external stewardship feedback. If feedback exists, assess it before any W3ID action. If #72 remains externally blocked, audit the live initiative/repository backlogs for newly opened independent public work rather than inventing vocabulary, repositories, or successor semantics.
+Check Pizza #72 only for a changed external gate before any W3ID action. While that gate remains blocked, continue with independent publication-safe work such as SKE #39 rather than inventing vocabulary, repositories, or successor semantics.
 
-Do not create additional SMO or ESKA vocabulary issues unless a distinct cross-domain requirement is demonstrated and established standards are first shown insufficient.
+After the initiative-level semantic-continuity definition is reviewed, reconcile downstream ESKA wording without modifying immutable releases. Do not create additional SMO or ESKA vocabulary issues unless a distinct cross-domain requirement is demonstrated and established standards are first shown insufficient.
