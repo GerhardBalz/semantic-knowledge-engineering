@@ -4,7 +4,7 @@
 
 **Semantics must remain explicit through execution.**
 
-When formal knowledge is projected into executable forms, the semantics relevant to that execution should remain available, inspectable, and traceable to their authoritative source rather than becoming recoverable only by reverse-engineering code, configuration, mappings, prompts, APIs, or runtime behavior.
+When formal knowledge participates in execution — directly or through implementation projections — the semantics relevant to that execution should remain available, inspectable, and traceable to their authoritative source rather than becoming recoverable only by reverse-engineering code, configuration, mappings, prompts, APIs, or runtime behavior.
 
 This is a continuity requirement, not a requirement to reproduce the complete authoritative semantic model inside every implementation artifact.
 
@@ -26,7 +26,7 @@ Authoritative semantics
         ↓
 Semantic Model
         ↓
-Implementation Projection
+Implementation Projection — when used
         ↓
 Executable Semantic Knowledge
         ↓
@@ -40,14 +40,14 @@ Execution / result / evidence
         ↑
 Executable Semantic Knowledge
         ↑
-Implementation Projection
+Implementation Projection — when used
         ↑
 Semantic Model
         ↑
 Authoritative semantics
 ```
 
-An implementation projection may deliberately contain only the subset of semantics required for its purpose. The requirement is that this relevant meaning and its lineage remain explicit and traceable through the projection and execution chain.
+An implementation projection, when used, may deliberately contain only the subset of semantics required for its purpose. A semantic artifact may also participate in execution directly. In either case, the relevant meaning and its lineage must remain explicit and traceable through the representation and execution chain.
 
 ## Why this is shared
 
@@ -91,7 +91,7 @@ This is only an explanatory aside—not evidence for the principle, not a formal
 
 Architectures following this principle should prefer explicit machine-readable continuity from semantic source to operational result. Implementation convenience alone is not sufficient justification for replacing semantic identifiers, duplicating semantic ownership, or reducing meaning to undocumented runtime behavior.
 
-The principle does not require one universal runtime representation. RDF/OWL, SHACL, APIs, JSON, code, configuration, tool contracts, and other implementation forms may each play different roles as long as authority, relevant meaning, projection boundaries, and lineage remain clear.
+The principle does not require one universal runtime representation. RDF/OWL, SHACL, APIs, JSON, code, configuration, tool contracts, and other implementation forms may each play different roles as long as authority, relevant meaning, projection boundaries where projections exist, and lineage remain clear.
 
 Detailed execution concepts and their formal vocabulary remain owned by ESKA.
 
