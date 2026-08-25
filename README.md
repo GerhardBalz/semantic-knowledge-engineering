@@ -38,7 +38,7 @@ Useful shortcuts:
 
 The common rule is that a repository may consume, project, operationalize, or test semantics without silently becoming their authority.
 
-For a cross-cutting orientation across standards, tooling, SKE concepts, related work and evidence, see the [SKE concept and responsibility map](landscape/concept-map.md).
+For a cross-cutting orientation across standards, tooling, SKE concepts, related work and evidence, see the [SKE concept and responsibility map](landscape/concept-map.md). For source-grounded comparisons with independently developed approaches, see the [SKE related-work index](landscape/related-work/README.md).
 
 ## Scope
 
@@ -103,9 +103,12 @@ Repository-local work remains authoritative in the relevant repository backlog; 
 
 The public initiative/reference baseline now spans SKE, SMO, ESKA, Pizza Ontology, Semantic Modeling Pizza, Semantic Modeling Wine/Food, and Semantic Agentic Network Operations.
 
-Active public P1 work is:
+The initiative-level semantic-continuity work is complete: [SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) was implemented through SKE PR #40 and reconciled downstream through ESKA PR #95.
 
-- [SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) — refine and adopt the initiative-level semantic-continuity principle;
+Recent cross-cutting publication work is also complete: the concept/responsibility map was published through SKE PR #41, and reviewed related-work notes for AI Unified Process / Spec-Driven Development and Knowledge Spine were published through SKE PRs #42 and #43.
+
+The only active public P1 gate is:
+
 - [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) — external stewardship/provenance gate before any preservation/reference W3ID submission.
 
 Pizza #4 remains parked until a concrete semantic-modernization requirement exists. SMO, ESKA, Semantic Modeling Pizza, Semantic Modeling Wine/Food, and Semantic Agentic Network Operations currently have no open repository-local issues.
