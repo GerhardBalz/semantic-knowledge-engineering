@@ -12,9 +12,9 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** None by default. SKE does not mint an `ske:` vocabulary merely to describe governance.
 
-**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly; SANO was subsequently added as an industrial architecture/reference-evidence case.
+**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly; SANO was subsequently added as an industrial architecture/reference-evidence case. SKE #39 / PR #40 completed the initiative-level semantic-continuity wording; PR #41 published the concept/responsibility map; PRs #42 and #43 published reviewed related-work notes for AI Unified Process / Spec-Driven Development and Knowledge Spine.
 
-**Current backlog:** [SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) is active P1 to refine and adopt the initiative-level semantic-continuity principle **“Semantics must remain explicit through execution.”**
+**Current backlog:** No independent SKE P1 issue is currently open. The current public initiative gate is external [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72). SKE #32 remains the durable public handover checkpoint.
 
 ## Semantic foundations
 
@@ -36,7 +36,7 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** ESKA execution architecture and ESKA-owned concepts. Execution signatures and evidence structures do not migrate into SMO merely for symmetry.
 
-**Lifecycle/status:** Public; core 0.2.0 SMO alignment and immutable W3ID publication complete.
+**Lifecycle/status:** Public; core 0.2.0 SMO alignment and immutable W3ID publication complete. ESKA PR #95 reconciled the adopted semantic-continuity wording and ESKA PR #96 published OntoJIT related work.
 
 **Current backlog:** No open issues. Downstream documentation should follow the reviewed initiative-level semantic-continuity wording without changing immutable releases or introducing new vocabulary.
 
@@ -112,7 +112,7 @@ One-to-one stewardship contact and follow-up status are intentionally not tracke
 
 ```text
 SKE
-  #39  ACTIVE P1 — semantic-continuity principle refinement
+  #39  COMPLETE — semantic-continuity principle adopted and reconciled
   #32  ACTIVE — durable public handover
   #29  COMPLETE — public reference visibility decision
   #27  SUPERSEDED — historical handover
@@ -142,4 +142,4 @@ Semantic Agentic Network Operations
 
 Do not create reusable SMO or ESKA vocabulary merely because a concept appears in one reference example. Prefer established standards first, require independent cross-domain evidence, preserve ownership boundaries, and retain negative evidence when a second domain does not need the same structure.
 
-See [the current sequence](../roadmap/current-sequence.md) and [the Pizza ↔ Wine/Food evidence review](../analysis/semantic-modeling-cross-example.md).
+See [the current sequence](../roadmap/current-sequence.md), the [SKE concept and responsibility map](../landscape/concept-map.md), the [SKE related-work index](../landscape/related-work/README.md), and the [Pizza ↔ Wine/Food evidence review](../analysis/semantic-modeling-cross-example.md).
