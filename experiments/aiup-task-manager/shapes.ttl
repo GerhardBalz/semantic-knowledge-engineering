@@ -36,6 +36,7 @@ atm:TaskAccessShape
         a sh:SPARQLConstraint ;
         sh:message "Viewer must be a member of the team that owns the task." ;
         sh:select """
+            PREFIX atm: <https://raw.githubusercontent.com/GerhardBalz/semantic-knowledge-engineering/main/experiments/aiup-task-manager/model.ttl#>
             SELECT $this
             WHERE {
               $this atm:viewer ?viewer ;
