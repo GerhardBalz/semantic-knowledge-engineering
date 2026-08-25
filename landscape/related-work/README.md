@@ -16,6 +16,7 @@ Use the [SKE concept and responsibility map](../concept-map.md) to classify each
 ## Current notes
 
 - [AI Unified Process / Spec-Driven Development](ai-unified-process.md) — specification authority and behavioral continuity through AI-assisted implementation compared with SKE semantic authority and continuity through execution.
+- [Knowledge Spine](knowledge-spine.md) — governed operational semantic infrastructure, mappings/federation, lifecycle, and agent grounding compared with SKE's distributed-authority guardrail and ESKA continuity through action/result/evidence.
 
 Execution-specific related work may also live in the [ESKA repository](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture) when the comparison is primarily about executable semantic knowledge rather than the wider SKE initiative.
 
