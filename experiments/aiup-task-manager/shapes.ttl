@@ -1,0 +1,48 @@
+@prefix atm: <https://raw.githubusercontent.com/GerhardBalz/semantic-knowledge-engineering/main/experiments/aiup-task-manager/model.ttl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+atm:TaskShape
+    a sh:NodeShape ;
+    sh:targetClass atm:Task ;
+    sh:property [
+        sh:path atm:ownedByTeam ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class atm:Team
+    ] ;
+    sh:property [
+        sh:path atm:status ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (atm:Draft atm:Open atm:Assigned atm:Done)
+    ] .
+
+atm:TaskAccessShape
+    a sh:NodeShape ;
+    sh:targetClass atm:TaskAccess ;
+    sh:property [
+        sh:path atm:viewer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class atm:User
+    ] ;
+    sh:property [
+        sh:path atm:task ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class atm:Task
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Viewer must be a member of the team that owns the task." ;
+        sh:select """
+            PREFIX atm: <https://raw.githubusercontent.com/GerhardBalz/semantic-knowledge-engineering/main/experiments/aiup-task-manager/model.ttl#>
+            SELECT $this
+            WHERE {
+              $this atm:viewer ?viewer ;
+                    atm:task ?task .
+              ?task atm:ownedByTeam ?team .
+              FILTER NOT EXISTS { ?viewer atm:memberOf ?team }
+            }
+        """
+    ] .

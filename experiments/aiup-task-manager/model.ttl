@@ -1,0 +1,50 @@
+@prefix atm: <https://raw.githubusercontent.com/GerhardBalz/semantic-knowledge-engineering/main/experiments/aiup-task-manager/model.ttl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix smo: <https://w3id.org/smo#> .
+
+<https://raw.githubusercontent.com/GerhardBalz/semantic-knowledge-engineering/main/experiments/aiup-task-manager/model.ttl>
+    a owl:Ontology, smo:SemanticModel ;
+    dcterms:title "AIUP Task Manager semantic falsification probe"@en ;
+    dcterms:description "Experiment-owned semantic model used only to test whether a separate semantic layer adds independent value to a current AIUP Task Manager slice."@en ;
+    dcterms:source <https://github.com/AI-Unified-Process/task-manager/tree/784988b700c8369cc1a05bda7d42d8481cd87c17> ;
+    prov:wasDerivedFrom <https://github.com/AI-Unified-Process/task-manager/blob/784988b700c8369cc1a05bda7d42d8481cd87c17/docs/entity_model.md>,
+                        <https://github.com/AI-Unified-Process/task-manager/blob/784988b700c8369cc1a05bda7d42d8481cd87c17/docs/use_cases/UC-006_View_Team_Tasks.md> .
+
+atm:User a owl:Class ; rdfs:label "User"@en .
+atm:Team a owl:Class ; rdfs:label "Team"@en .
+atm:Task a owl:Class ; rdfs:label "Task"@en .
+atm:TaskAccess a owl:Class ; rdfs:label "Task access observation"@en .
+atm:TaskStatus a owl:Class ; rdfs:label "Task status"@en .
+
+atm:memberOf
+    a owl:ObjectProperty ;
+    rdfs:domain atm:User ;
+    rdfs:range atm:Team .
+
+atm:ownedByTeam
+    a owl:ObjectProperty ;
+    rdfs:domain atm:Task ;
+    rdfs:range atm:Team .
+
+atm:status
+    a owl:ObjectProperty ;
+    rdfs:domain atm:Task ;
+    rdfs:range atm:TaskStatus .
+
+atm:viewer
+    a owl:ObjectProperty ;
+    rdfs:domain atm:TaskAccess ;
+    rdfs:range atm:User .
+
+atm:task
+    a owl:ObjectProperty ;
+    rdfs:domain atm:TaskAccess ;
+    rdfs:range atm:Task .
+
+atm:Draft a atm:TaskStatus ; rdfs:label "DRAFT" .
+atm:Open a atm:TaskStatus ; rdfs:label "OPEN" .
+atm:Assigned a atm:TaskStatus ; rdfs:label "ASSIGNED" .
+atm:Done a atm:TaskStatus ; rdfs:label "DONE" .

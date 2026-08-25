@@ -234,13 +234,13 @@ ESKA becomes relevant only when **machine-interpretable semantic knowledge** par
 
 Do not import ESKA execution vocabulary into ordinary AIUP software execution merely because code and tests run.
 
-## Candidate integration experiment
+## Executed Task Manager integration/falsification experiment
 
-A future experiment could test whether a very small semantic layer adds measurable value to AIUP without displacing its Specification Core.
+[SKE #45](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/45) executes the previously proposed Task Manager experiment as a falsification test. The public experiment artifacts are under [`experiments/aiup-task-manager/`](../../experiments/aiup-task-manager/).
 
-The reviewed primary-source **Simple Task Manager** is a strong principal candidate, with the public Book Library tutorial as corroborating evidence.
+The experiment pins the upstream `AI-Unified-Process/task-manager` repository to commit `784988b700c8369cc1a05bda7d42d8481cd87c17` and follows the currently reproducible `UC-006 View Team Tasks` slice. The live repository currently exposes only `UC-006_View_Team_Tasks.md` under `docs/use_cases/`, so the experiment deliberately does not pretend that the earlier book-era `Assign Task` candidate remains the current public case.
 
-The experiment should ask, in order:
+The probe asks the same concern-by-concern questions proposed earlier:
 
 1. Which meanings are already owned adequately by AIUP artifacts?
 2. Does any selected concept need a distinct stable semantic identity?
@@ -248,10 +248,25 @@ The experiment should ask, in order:
 4. Is an `ImplementationProjection` needed, or is direct semantic use simpler?
 5. Which mechanism actually fits the concern: OWL reasoning, SHACL validation, SPARQL, mapping, ordinary tests, or none?
 6. Does explicit semantic lineage add information beyond Git and AIUP traceability?
-7. If semantics participate in runtime behavior, do they remain explicit through result and verification evidence?
-8. Which proposed semantic additions are redundant and should be rejected?
+7. Which proposed semantic additions are redundant and should be rejected?
 
-This experiment remains **candidate evidence**, not a demonstrated SKE/AIUP integration result.
+The small experiment-owned RDF/OWL model and constraint probe can restate task status and team-membership access constraints, and the executable verifier rejects deliberately invalid data. That demonstrates representability, not independent architectural value.
+
+For this current UC-006 slice, the result is **negative/falsification evidence**:
+
+- task structure, relationships and status are already owned by the AIUP Entity Model/application constraints;
+- membership-based access is already owned by UC-006 and its tests;
+- current requirement `C-008` explicitly excludes external integrations, so no interoperability requirement justifies a semantic layer;
+- no independent reasoning, cross-system identity, mapping, or reusable-domain-semantics requirement is demonstrated;
+- the existing AIUP Entity Model is not an `smo:ImplementationProjection`, because it was not deliberately derived from the experiment Semantic Model.
+
+Therefore the experiment does **not** justify adopting a separate production Semantic Model or Implementation Projection for the current Task Manager case.
+
+This is the intended falsification discipline:
+
+> **Do not add semantic machinery where specification authority, application constraints, and tests already own the concern adequately.**
+
+Reconsider only if a new concern appears that the current AIUP specification core does not already own adequately—for example cross-system concept identity, independently governed mappings, semantic interoperability, formal reasoning, or reusable domain semantics across bounded contexts.
 
 ## Evidence status
 
@@ -261,9 +276,9 @@ This experiment remains **candidate evidence**, not a demonstrated SKE/AIUP inte
 | AIUP Specification Core | externally evidenced; preserve source framing |
 | SKE `authority by concern` interpretation | SKE analytical framing |
 | RDF/OWL/SHACL as AIUP requirements | not evidenced |
-| separate Semantic Model in an AIUP project | candidate design only |
-| Entity Model as `ImplementationProjection` | conditional candidate only |
-| Task Manager semantic integration | candidate future experiment |
+| separate Semantic Model in an AIUP project | tested as an experiment-owned probe; not justified for the current UC-006 application slice |
+| Entity Model as `ImplementationProjection` | not demonstrated; current Entity Model is not deliberately derived from the experiment Semantic Model |
+| Task Manager semantic integration | executed falsification evidence for the current pinned UC-006 slice; no production semantic layer justified |
 | AIUP as an SKE dependency | no |
 
 ## Conclusion
@@ -276,7 +291,7 @@ SKE's complementary question is narrower and semantic:
 
 > when independently governed domain meaning matters, how does that meaning remain explicit across representation, projection when used, execution, result, and evidence?
 
-The useful integration is therefore **selective composition**, not replacement:
+The executed Task Manager probe reinforces **selective composition**, not replacement:
 
 - preserve AIUP's own behavioral/specification authority;
 - introduce explicit semantic authority only where it adds independent value;
@@ -284,4 +299,4 @@ The useful integration is therefore **selective composition**, not replacement:
 - select standards/tools by concern;
 - treat negative evidence against unnecessary semantic machinery as a valid result.
 
-This comparison introduces no new SKE/SMO/ESKA vocabulary, dependency, or repository.
+This comparison and experiment introduce no new SKE/SMO/ESKA vocabulary, dependency, or repository.
