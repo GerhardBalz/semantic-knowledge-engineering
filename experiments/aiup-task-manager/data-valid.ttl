@@ -1,0 +1,11 @@
+@prefix atm: <https://raw.githubusercontent.com/GerhardBalz/semantic-knowledge-engineering/main/experiments/aiup-task-manager/model.ttl#> .
+@prefix ex: <https://example.org/ske/aiup-task-manager/data/> .
+
+ex:development a atm:Team .
+ex:alice a atm:User ; atm:memberOf ex:development .
+ex:task-1 a atm:Task ;
+    atm:ownedByTeam ex:development ;
+    atm:status atm:Assigned .
+ex:access-1 a atm:TaskAccess ;
+    atm:viewer ex:alice ;
+    atm:task ex:task-1 .
