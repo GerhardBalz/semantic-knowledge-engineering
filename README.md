@@ -38,6 +38,8 @@ Useful shortcuts:
 
 The common rule is that a repository may consume, project, operationalize, or test semantics without silently becoming their authority.
 
+For a cross-cutting orientation across standards, tooling, SKE concepts, related work and evidence, see the [SKE concept and responsibility map](landscape/concept-map.md).
+
 ## Scope
 
 SKE owns cross-repository material that is useful precisely because it spans more than one participating repository:
