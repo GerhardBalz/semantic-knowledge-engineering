@@ -4,17 +4,23 @@ This file records the current cross-repository dependency sequence. Repository-l
 
 The current durable public handover checkpoint is [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32). SKE #27 and #22 are superseded historical handovers.
 
-## 1. Active independent P1 — semantic-continuity principle
+## 1. Completed cross-cutting SKE cycle — semantic continuity, landscape and related work
 
-[SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) is active independent initiative-level work to refine the primary continuity principle to:
+[SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) is complete. The initiative-level principle is now:
 
 > **Semantics must remain explicit through execution.**
 
-The principle should make preservation, traceability, inspectability and provenance explicit while avoiding a requirement that every runtime artifact reproduce the complete authoritative semantic model.
+The earlier wording **“Execution must not sever semantics”** remains useful as explanatory failure-mode shorthand rather than the normative definition.
 
-The earlier wording **“Execution must not sever semantics”** may remain as explanatory shorthand, but should not remain the normative definition after #39 is reviewed and adopted.
+Completed downstream/publication steps include:
 
-Do not introduce new SMO or ESKA vocabulary merely because the principle wording changes. Historical issues and immutable releases remain historical rather than being rewritten.
+- SKE PR #40 — adopt the initiative-level semantic-continuity wording;
+- ESKA PR #95 — reconcile downstream ESKA wording without changing immutable releases;
+- SKE PR #41 — publish the concept/responsibility map using **kind × architectural concern × evidence status**;
+- SKE PR #42 — publish AI Unified Process / Spec-Driven Development as source-grounded related work;
+- SKE PR #43 — publish Knowledge Spine as source-grounded related work.
+
+The related-work notes preserve source terminology first and use SKE only as a comparison lens. They do not imply adoption or endorsement.
 
 ## 2. Active external P1 — Pizza preservation/reference stewardship gate
 
@@ -108,7 +114,7 @@ No active issue exists in SMO, ESKA, Semantic Modeling Pizza, Semantic Modeling 
 
 ```text
 SKE
-  #39  ACTIVE P1 — semantic-continuity principle refinement
+  #39  COMPLETE — semantic-continuity principle adopted and reconciled
   #32  ACTIVE — durable public handover checkpoint
   #29  COMPLETE — reference visibility decision
   #27  SUPERSEDED — historical handover
@@ -136,6 +142,6 @@ Semantic Agentic Network Operations
 
 ## Sequencing rule
 
-Check Pizza #72 only for a changed external gate before any W3ID action. While that gate remains blocked, continue with independent publication-safe work such as SKE #39 rather than inventing vocabulary, repositories, or successor semantics.
+Check Pizza #72 only for a changed external gate before any W3ID action. While that gate remains blocked, proceed only with newly opened independent publication-safe work that has its own evidence and repository anchor; do not invent vocabulary, repositories, successor semantics, or outreach tasks merely to keep the sequence moving.
 
-After the initiative-level semantic-continuity definition is reviewed, reconcile downstream ESKA wording without modifying immutable releases. Do not create additional SMO or ESKA vocabulary issues unless a distinct cross-domain requirement is demonstrated and established standards are first shown insufficient.
+Do not create additional SMO or ESKA vocabulary issues unless a distinct cross-domain requirement is demonstrated and established standards are first shown insufficient.
