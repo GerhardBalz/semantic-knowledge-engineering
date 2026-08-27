@@ -57,7 +57,7 @@ Verified on **2026-08-27**. This table is an inventory checkpoint, not a substit
 
 | Repository | Live rights state | Disposition |
 | --- | --- | --- |
-| `semantic-knowledge-engineering` | Public; no root licence | Deliberate gap. After this convention is reviewed, use a separate Ready PR to choose and apply the exact SKE scope; the standalone-documentation default is the starting recommendation. |
+| `semantic-knowledge-engineering` | MIT for SKE-authored material; external references and evidence remain upstream-governed through `NOTICE.md` | Retain the uniform software licence for the mixed documentation, scripts, workflow configuration, and executable experiments, with the explicit third-party boundary. |
 | `semantic-modeling-ontology` | MIT | Retain. Treat the existing mixed ontology/engineering package as an established exception rather than mechanically relicensing it. |
 | `executable-semantic-knowledge-architecture` | MIT, with example-local Pizza and LUBM notices | Retain the root licence and explicit local third-party boundaries. |
 | `pizza-ontology` | Split: historical Pizza semantic content CC BY 3.0; new software/engineering MIT; new documentation CC BY 4.0 | Retain the explicit `LICENSE.md`, `NOTICE.md`, and provenance boundary. |
