@@ -34,6 +34,12 @@ Contributions should follow the [Semantic Markdown convention](conventions/seman
 2. use unordered Markdown lists for non-sequential collections;
 3. reserve fenced blocks for content whose literal/preformatted representation is semantically significant.
 
+## Licensing contributions
+
+Contributions intended for inclusion as SKE-authored material must be available under the repository [MIT License](LICENSE). Contributors must have authority to submit the material.
+
+Identify externally authored, quoted, derived, pinned, cached, or transformed material together with its source and applicable terms. Do not submit third-party material when the concrete redistribution authority is unclear; a link or attribution alone is not a licence.
+
 ## Review
 
 Changes should be reviewable and narrowly scoped. Cross-repository adoption should normally follow this order:
