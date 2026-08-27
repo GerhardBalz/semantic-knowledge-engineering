@@ -113,3 +113,9 @@ The only active public P1 gate is:
 - [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) — external stewardship/provenance gate before any preservation/reference W3ID submission.
 
 Pizza #4 remains parked until a concrete semantic-modernization requirement exists. SMO, ESKA, Semantic Modeling Pizza, Semantic Modeling Wine/Food, and Semantic Agentic Network Operations currently have no open repository-local issues.
+
+## Licence
+
+Original SKE-authored material is licensed under the [MIT License](LICENSE) (`SPDX-License-Identifier: MIT`).
+
+Externally authored standards, ontologies, datasets, benchmark material, papers, repositories, quotations, and other referenced evidence remain governed by their respective rights holders and terms. See [NOTICE.md](NOTICE.md) for the repository boundary.
