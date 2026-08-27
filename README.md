@@ -86,6 +86,7 @@ The first SKE baseline contains only material already supported by implemented c
 - [Semantic identity is independent of publication backend](principles/semantic-identity-independent-of-publication-backend.md)
 - [Publication lifecycle](conventions/publication-lifecycle.md)
 - [Semantic Markdown](conventions/semantic-markdown.md)
+- [Repository licensing and third-party rights](conventions/repository-licensing.md)
 
 ## Cross-repository decisions
 
