@@ -57,7 +57,6 @@ This principle originated as a defining ESKA invariant, but implemented and refe
 - ESKA consumes those artifacts through immutable source bindings rather than copying and re-owning them;
 - execution records connect capabilities, semantic models, executable artifacts, results, verification, and provenance;
 - operational Service, Agent, and Deployment layers remain separable from the semantic source;
-- the Semantic Agentic Network Operations reference case tests the same continuity question across intent translation, tool execution, validation, and evidence without turning telecom concepts into SKE vocabulary.
 
 The principle therefore governs the relationship between semantic modeling and execution without moving ESKA's detailed execution semantics into SKE or expanding SMO for symmetry.
 
@@ -97,4 +96,4 @@ Detailed execution concepts and their formal vocabulary remain owned by ESKA.
 
 ## Provenance
 
-Primary implemented evidence remains the [Executable Semantic Knowledge Architecture](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture) and its source-owned Pizza integration with [Pizza Ontology](https://github.com/GerhardBalz/pizza-ontology). The [Semantic Agentic Network Operations](https://github.com/GerhardBalz/semantic-agentic-network-operations) repository provides an additional industrial architecture/reference-evidence case for testing the continuity requirement.
+Primary implemented evidence remains the [Executable Semantic Knowledge Architecture](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture) and its source-owned Pizza integration with [Pizza Ontology](https://github.com/GerhardBalz/pizza-ontology).
