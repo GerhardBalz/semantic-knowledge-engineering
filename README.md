@@ -17,7 +17,7 @@ Implementation Projection
         ↓ operationalized while preserving semantic lineage
 Executable Semantic Knowledge Architecture
         ↓ tested against concrete evidence
-Reference domains + industrial architecture cases
+Reference domains + executable evidence
 ```
 
 The repositories keep different ownership boundaries even when they participate in the same path:
@@ -27,13 +27,12 @@ The repositories keep different ownership boundaries even when they participate 
 3. **Read [ESKA](https://github.com/GerhardBalz/executable-semantic-knowledge-architecture)** for the execution architecture under the principle that **semantics must remain explicit through execution**.
 4. **Use [Pizza Ontology](https://github.com/GerhardBalz/pizza-ontology)** as the concrete preservation/reference and executable proving ground, then [Semantic Modeling Pizza](https://github.com/GerhardBalz/semantic-modeling-pizza) for the SMO-oriented reference path.
 5. **Use [Semantic Modeling Wine/Food](https://github.com/GerhardBalz/semantic-modeling-wine-food)** as independent cross-domain evidence that tests which patterns actually generalize and which should remain local.
-6. **Use [Semantic Agentic Network Operations](https://github.com/GerhardBalz/semantic-agentic-network-operations)** as an industrial architecture/reference-evidence case for testing semantic continuity from intent through governed tool execution to evidence without introducing a telecom ontology by default.
 
 Useful shortcuts:
 
 - **Ontology / Semantic Web / knowledge-graph practitioners:** Pizza Ontology → SMO → Semantic Modeling Pizza → Wine/Food.
 - **Solution / enterprise / knowledge architects:** SKE principles → SMO → ESKA → reference evidence.
-- **AI / agent architecture practitioners:** ESKA → Semantic Agentic Network Operations → Pizza executable evidence → SKE semantic-ownership and provenance boundaries.
+- **AI / agent architecture practitioners:** ESKA → Pizza executable evidence → SKE semantic-ownership and provenance boundaries.
 - **Developers seeking a reproducible path:** Pizza Ontology and ESKA provide the densest executable examples and verification contracts.
 
 The common rule is that a repository may consume, project, operationalize, or test semantics without silently becoming their authority.
@@ -62,7 +61,6 @@ SKE does **not** become authoritative for semantic concepts owned by participati
 | [Pizza Ontology](https://github.com/GerhardBalz/pizza-ontology) | Reference / preservation project | Preservation/reference project and proving ground for the historical Pizza ontology and repository-authored evidence | Pizza domain semantics remain source-owned; repository owns preservation/reference evidence |
 | [Semantic Modeling Pizza](https://github.com/GerhardBalz/semantic-modeling-pizza) | Semantic modeling reference example | SMO-oriented reference example using Pizza without taking ownership of the Pizza ontology | Example-local modeling and projection evidence only |
 | [Semantic Modeling Wine/Food](https://github.com/GerhardBalz/semantic-modeling-wine-food) | Semantic modeling reference example | Cross-domain SMO-oriented Wine/Food reference example built from historical W3C teaching-domain semantics | Example-local modeling evidence only; original Wine/Food authority remains external |
-| [Semantic Agentic Network Operations](https://github.com/GerhardBalz/semantic-agentic-network-operations) | Industrial architecture / reference evidence | Technology-neutral agentic network-operations case testing semantic continuity across intent, tools, validation and evidence | No telecom ontology; cited telecom/standards concepts remain externally owned |
 | [GerhardBalz/w3id.org](https://github.com/GerhardBalz/w3id.org) | Supporting publication infrastructure | Working fork used to prepare persistent identifier redirect changes for upstream `perma-id/w3id.org` | None; infrastructure only |
 
 The repositories are related but independently governed. Shared conventions are adopted by participating repositories; they are not silently imposed by SKE.
@@ -102,7 +100,7 @@ Repository-local work remains authoritative in the relevant repository backlog; 
 
 ## Status
 
-The public initiative/reference baseline now spans SKE, SMO, ESKA, Pizza Ontology, Semantic Modeling Pizza, Semantic Modeling Wine/Food, and Semantic Agentic Network Operations.
+The public initiative/reference baseline spans SKE, SMO, ESKA, Pizza Ontology, Semantic Modeling Pizza, and Semantic Modeling Wine/Food.
 
 The initiative-level semantic-continuity work is complete: [SKE #39](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/39) was implemented through SKE PR #40 and reconciled downstream through ESKA PR #95.
 
@@ -112,7 +110,7 @@ The only active public P1 gate is:
 
 - [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72) — external stewardship/provenance gate before any preservation/reference W3ID submission.
 
-Pizza #4 remains parked until a concrete semantic-modernization requirement exists. SMO, ESKA, Semantic Modeling Pizza, Semantic Modeling Wine/Food, and Semantic Agentic Network Operations currently have no open repository-local issues.
+Pizza #4 remains parked until a concrete semantic-modernization requirement exists. SMO, ESKA, Semantic Modeling Pizza, and Semantic Modeling Wine/Food currently have no open repository-local issues.
 
 ## Licence
 
