@@ -4,7 +4,7 @@
 
 Every participating repository must have a deliberate rights position based on the material it actually contains. Public visibility, organization ownership, a repository name, or a licence used by another participating repository does not grant or imply reuse rights.
 
-This convention does not relicense any repository or artifact. Existing grants, reservations, contributor rights, upstream terms, and contractual restrictions remain in force until the affected repository adopts a reviewed change.
+This convention does not relicense any repository or artifact. Existing grants already made remain effective under their terms. A reviewed change may make new or additional grants only for material the relevant rights holders are authorized to license; contributor rights, upstream terms, and contractual restrictions continue to apply unless lawfully changed by the relevant parties.
 
 A missing licence is therefore a valid but restrictive state: ordinary copyright defaults apply. GitHub documents that without a licence the copyright holder retains the relevant rights and others generally may not reproduce, distribute, or create derivative works, apart from GitHub's platform terms for viewing and forking public repositories.
 
