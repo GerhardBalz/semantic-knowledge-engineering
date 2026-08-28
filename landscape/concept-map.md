@@ -29,7 +29,7 @@ This map is intentionally concise. Detailed standards status, reuse decisions, a
 | Engineering / publication infrastructure | Git, GitHub, CI, releases, W3ID, content negotiation | Supports reproducibility, review and stable resolution; does not own meaning |
 | SKE-owned architecture / semantic concept | SKE, SMO, ESKA, `SemanticModel`, optional `ImplementationProjection` | Exists only where established standards do not already own the concern |
 | Related work / adjacent architecture | independently developed methodologies and architectures | Compare in their own terms before drawing SKE conclusions |
-| Reference / falsification evidence | Pizza, Semantic Modeling Pizza, Wine/Food, SANO, bounded ESKA specimens | Tests whether SKE ideas survive concrete use; does not automatically create reusable vocabulary |
+| Reference / falsification evidence | Pizza, Semantic Modeling Pizza, Wine/Food, and bounded ESKA specimens | Tests whether SKE ideas survive concrete use; does not automatically create reusable vocabulary |
 
 ## 2. Architectural concerns
 
@@ -229,7 +229,6 @@ Includes:
 - ESKA service/operation/access/deployment/agent concerns;
 - APIs and OpenAPI where they are application/interface contracts or deliberate implementation projections;
 - MCP where it is a suitable protocol/tool-mediation realization;
-- SANO as industrial architecture/reference evidence around governed agent tool access, intent translation, validation, observability and audit.
 
 Guardrail:
 
@@ -253,7 +252,6 @@ Keep two categories separate:
 - Pizza Ontology;
 - Semantic Modeling Pizza;
 - Semantic Modeling Wine/Food;
-- Semantic Agentic Network Operations;
 - bounded ESKA executable specimens covering reasoning, validation, rules, decisions, calculations, mappings, workflows and related tooling experiments.
 
 Guardrails:

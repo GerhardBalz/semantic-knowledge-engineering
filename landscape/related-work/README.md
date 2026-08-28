@@ -7,7 +7,7 @@ This directory contains concise, source-grounded comparisons between Semantic Kn
 Related work is kept separate from initiative reference/falsification evidence:
 
 - **related work** asks what an independently developed approach owns, where it overlaps with SKE, and where it differs;
-- **reference evidence** tests SKE ideas in concrete initiative examples such as Pizza, Wine/Food, SANO, or bounded ESKA specimens.
+- **reference evidence** tests SKE ideas in concrete initiative examples such as Pizza, Wine/Food, or bounded ESKA specimens.
 
 A related-work note does **not** imply adoption, endorsement, dependency, or proof that SKE is correct.
 

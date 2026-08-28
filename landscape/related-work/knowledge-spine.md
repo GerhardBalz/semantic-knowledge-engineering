@@ -271,7 +271,7 @@ The value of the comparison is architectural clarification, not terminology acqu
 
 Knowledge Spine is **related work / adjacent architecture** for SKE.
 
-It is not initiative reference evidence in the same sense as Pizza, Wine/Food, SANO, or bounded ESKA specimens. Its public material is evidence for claims about **Knowledge Spine itself**; SKE conclusions drawn from it remain comparative interpretation.
+It is not initiative reference evidence in the same sense as Pizza, Wine/Food, or bounded ESKA specimens. Its public material is evidence for claims about **Knowledge Spine itself**; SKE conclusions drawn from it remain comparative interpretation.
 
 ## Related SKE material
 

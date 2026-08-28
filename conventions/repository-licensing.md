@@ -63,7 +63,6 @@ Verified on **2026-08-27**. This table is an inventory checkpoint, not a substit
 | `pizza-ontology` | Split: historical Pizza semantic content CC BY 3.0; new software/engineering MIT; new documentation CC BY 4.0 | Retain the explicit `LICENSE.md`, `NOTICE.md`, and provenance boundary. |
 | `semantic-modeling-pizza` | MIT for repository-authored work; Pizza CC BY 3.0 recorded in `NOTICE.md` | Retain. The top-level MIT licence must not be read as relicensing Pizza content. |
 | `semantic-modeling-wine-food` | MIT for repository-authored work; W3C Wine/Food material referenced, not redistributed | Retain the reference-only notice and re-evaluate before caching or preserving upstream files. |
-| `semantic-agentic-network-operations` | MIT; external architecture and standards are referenced with an independence boundary | Retain. Citations and mappings do not transfer external ownership. |
 | `w3id.org` working fork | No initiative root licence; upstream contribution vehicle | Do not add an initiative blanket licence. Follow upstream governance and terms. |
 
 Private retained repositories are inventoried in the private governance tracker rather than named in the public convention. Their default state is no public grant unless their own reviewed source says otherwise. A private repository that serves a public website still requires an explicit rights decision for the published assets; deployment does not create a licence.
