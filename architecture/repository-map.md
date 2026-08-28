@@ -12,7 +12,7 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** None by default. SKE does not mint an `ske:` vocabulary merely to describe governance.
 
-**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly; SANO was subsequently added as an industrial architecture/reference-evidence case. SKE #39 / PR #40 completed the initiative-level semantic-continuity wording; PR #41 published the concept/responsibility map; PRs #42 and #43 published reviewed related-work notes for AI Unified Process / Spec-Driven Development and Knowledge Spine.
+**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly. SKE #39 / PR #40 completed the initiative-level semantic-continuity wording; PR #41 published the concept/responsibility map; PRs #42 and #43 published reviewed related-work notes for AI Unified Process / Spec-Driven Development and Knowledge Spine.
 
 **Current backlog:** No independent SKE P1 issue is currently open. The current public initiative gate is external [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72). SKE #32 remains the durable public handover checkpoint.
 
@@ -80,20 +80,6 @@ One-to-one stewardship contact and follow-up status are intentionally not tracke
 
 **Current backlog:** No open issues.
 
-## Industrial architecture / reference evidence
-
-### `GerhardBalz/semantic-agentic-network-operations`
-
-**Purpose:** Test SKE/SMO/ESKA semantic continuity against an operator-controlled agentic network-operations architecture spanning intent translation, agent orchestration, governed tool execution, validation, enforcement, observability and audit.
-
-**Semantic ownership:** This repository does not create a telecom ontology or claim ownership of 3GPP, O-RAN, ETSI, NGMN, MCP or other externally defined concepts. Its technology-neutral mapping is an independent architectural interpretation.
-
-**Lifecycle/status:** Public. The bootstrap baseline was reviewed and merged via SANO PR #1. MCP is treated primarily as one possible realization of the governed agent tool plane / mediation boundary rather than as the whole Agentic Network Operations Platform.
-
-**Current evidence:** the repository provides an industrial reference case for testing whether authoritative meaning and lineage can remain explicit from intent through operational projections and tool transactions to evidence and provenance.
-
-**Current backlog:** No open issues.
-
 ## Supporting publication infrastructure
 
 ### `GerhardBalz/w3id.org`
@@ -133,9 +119,6 @@ Semantic Modeling Pizza
 
 Semantic Modeling Wine/Food
   no open issues
-
-Semantic Agentic Network Operations
-  no open issues — reviewed bootstrap baseline merged
 ```
 
 ## Evidence rule
