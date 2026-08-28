@@ -37,31 +37,7 @@ Until feedback is received and assessed:
 
 When publication-safe feedback or a stewardship outcome is available, assess and record the technical/governance consequence in Pizza #72 before any W3ID submission. One-to-one contact and follow-up status are not part of the public initiative backlog.
 
-## 3. Semantic Agentic Network Operations baseline — complete
-
-The public [`semantic-agentic-network-operations`](https://github.com/GerhardBalz/semantic-agentic-network-operations) repository is the seventh initiative/reference repository.
-
-Its reviewed bootstrap baseline was merged via SANO PR #1. It provides an industrial architecture/reference-evidence case for testing semantic continuity through:
-
-```text
-intent
-  ↓
-translation / orchestration
-  ↓
-governed tool plane
-  ↓
-validation / enforcement
-  ↓
-execution
-  ↓
-evidence / provenance
-```
-
-The repository deliberately treats MCP primarily as one possible realization of the governed agent tool plane / mediation boundary rather than as the whole Agentic Network Operations Platform. It is not a telecom ontology or standards proposal.
-
-No repository-local SANO issue is currently open.
-
-## 4. Public semantic-modeling reference baseline — complete
+## 3. Public semantic-modeling reference baseline — complete
 
 [SKE #29](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/29) decided to publish both semantic-modeling reference examples together.
 
@@ -79,7 +55,7 @@ The public repositories are:
 
 Visibility does not imply authority over historical Pizza or W3C Wine/Food namespaces, endorsement by their original projects, or standardization of local experimental concepts.
 
-## 5. Completed cross-example + standards cycle
+## 4. Completed cross-example + standards cycle
 
 The following sequence is complete:
 
@@ -104,11 +80,11 @@ Final result:
 
 See [`analysis/semantic-modeling-cross-example.md`](../analysis/semantic-modeling-cross-example.md).
 
-## 6. Parked / trigger-based work
+## 5. Parked / trigger-based work
 
 [Pizza #4](https://github.com/GerhardBalz/pizza-ontology/issues/4) remains parked P2 until a concrete semantic-modernization requirement justifies a successor ontology lineage.
 
-No active issue exists in SMO, ESKA, Semantic Modeling Pizza, Semantic Modeling Wine/Food, or Semantic Agentic Network Operations.
+No active issue exists in SMO, ESKA, Semantic Modeling Pizza, or Semantic Modeling Wine/Food.
 
 ## Current backlog anchors
 
@@ -135,9 +111,6 @@ Semantic Modeling Pizza
 
 Semantic Modeling Wine/Food
   no open issues
-
-Semantic Agentic Network Operations
-  no open issues — reviewed bootstrap baseline merged
 ```
 
 ## Sequencing rule
