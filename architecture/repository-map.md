@@ -12,9 +12,9 @@ SKE owns the cross-repository roles, boundaries, sequencing and backlog links. E
 
 **Semantic ownership:** None by default. SKE does not mint an `ske:` vocabulary merely to describe governance.
 
-**Lifecycle/status:** Public. [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) is the current durable public handover. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly. SKE #39 / PR #40 completed the initiative-level semantic-continuity wording; PR #41 published the concept/responsibility map; PRs #42 and #43 published reviewed related-work notes for AI Unified Process / Spec-Driven Development and Knowledge Spine.
+**Lifecycle/status:** Public. [SKE #51](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/51) is the active reviewed public handover; [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) remains the historical predecessor pending separately authorized closure. SKE #25 / PR #26 and PR #28 completed the Pizza ↔ Wine/Food evidence cycle; SKE #29 completed the decision to publish both semantic-modeling reference examples publicly. SKE #39 / PR #40 completed the initiative-level semantic-continuity wording; PR #41 published the concept/responsibility map; PRs #42 and #43 published reviewed related-work notes for AI Unified Process / Spec-Driven Development and Knowledge Spine.
 
-**Current backlog:** No independent SKE P1 issue is currently open. The current public initiative gate is external [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72). SKE #32 remains the durable public handover checkpoint.
+**Current backlog:** No independent SKE P1 issue is currently open. The current public initiative gate is external [Pizza #72](https://github.com/GerhardBalz/pizza-ontology/issues/72). SKE #51 is the active reviewed public handover; SKE #32 remains the historical predecessor pending separately authorized closure.
 
 ## Semantic foundations
 
@@ -99,7 +99,8 @@ One-to-one stewardship contact and follow-up status are intentionally not tracke
 ```text
 SKE
   #39  COMPLETE — semantic-continuity principle adopted and reconciled
-  #32  ACTIVE — durable public handover
+  #51  ACTIVE — reviewed durable public handover
+  #32  HISTORICAL PREDECESSOR — closure requires a separate verified decision
   #29  COMPLETE — public reference visibility decision
   #27  SUPERSEDED — historical handover
   #22  SUPERSEDED — historical handover
