@@ -2,7 +2,7 @@
 
 This file records the current cross-repository dependency sequence. Repository-local backlogs remain authoritative for their own work.
 
-The current durable public handover checkpoint is [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32). SKE #27 and #22 are superseded historical handovers.
+The active reviewed public handover is [SKE #51](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/51). [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) remains the historical predecessor pending separately authorized closure. SKE #27 and #22 are superseded historical handovers.
 
 ## 1. Completed cross-cutting SKE cycle — semantic continuity, landscape and related work
 
@@ -91,7 +91,8 @@ No active issue exists in SMO, ESKA, Semantic Modeling Pizza, or Semantic Modeli
 ```text
 SKE
   #39  COMPLETE — semantic-continuity principle adopted and reconciled
-  #32  ACTIVE — durable public handover checkpoint
+  #51  ACTIVE — reviewed durable public handover
+  #32  HISTORICAL PREDECESSOR — closure requires a separate verified decision
   #29  COMPLETE — reference visibility decision
   #27  SUPERSEDED — historical handover
   #22  SUPERSEDED — historical handover

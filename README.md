@@ -94,7 +94,7 @@ SKE records decisions here only when the evidence and consequences genuinely spa
 
 ## Current sequence
 
-The active public initiative sequence is maintained in [roadmap/current-sequence.md](roadmap/current-sequence.md). The durable public handover checkpoint is [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32).
+The active public initiative sequence is maintained in [roadmap/current-sequence.md](roadmap/current-sequence.md). The active reviewed public handover is [SKE #51](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/51). [SKE #32](https://github.com/GerhardBalz/semantic-knowledge-engineering/issues/32) remains the historical predecessor pending separately authorized closure.
 
 Repository-local work remains authoritative in the relevant repository backlog; SKE links and sequences that work rather than duplicating it.
 
