@@ -16,7 +16,9 @@ Reviewed sources include:
 - [AIUP methodology](https://unifiedprocess.ai/methodology.html)
 - [AIUP tutorial](https://unifiedprocess.ai/tutorial.html)
 - [AIUP tools](https://unifiedprocess.ai/tools.html)
-- [AIUP Marketplace](https://github.com/AI-Unified-Process/marketplace)
+- [AIUP Marketplace](https://github.com/AI-Unified-Process/marketplace), especially [`aiup-core`](https://github.com/AI-Unified-Process/marketplace/blob/main/aiup-core/README.md), [workflow and artifacts](https://github.com/AI-Unified-Process/marketplace/blob/main/docs/workflow.md), and [project setup guidance](https://github.com/AI-Unified-Process/marketplace/blob/main/docs/guides/project-setup.md)
+- [Martinelli's public 4+1-to-AIUP architecture article](https://martinelli.ch/a-paper-from-1995-describes-how-you-should-work-with-ai-agents/)
+- [AIUP Task Manager project guidance](https://github.com/AI-Unified-Process/task-manager/blob/main/CLAUDE.md) and [ArchUnit `ArchitectureTest`](https://github.com/AI-Unified-Process/task-manager/blob/main/src/test/java/ch/martinelli/demo/aiup/ArchitectureTest.java)
 - [AIUP Book Library reference](https://github.com/AI-Unified-Process/book-library)
 - Martinelli, Simon. *Spec-Driven Development: From Specs to Code with AI Agents*. Apress Pocket Guides, 2026. Electronic ISBN `979-8-8688-2851-5`; DOI `10.1007/979-8-8688-2851-5`.
 
@@ -67,6 +69,22 @@ Nothing in the reviewed AIUP core requires RDF, OWL, SHACL, or a formal ontology
 | MCP | current external technical context/tool access | external protocol/tool-context mechanism; not behavioral or semantic authority |
 
 This separation is already useful without introducing semantic-web technology.
+
+### Architecture: representation, authority, and lifecycle
+
+**Martinelli's public position.** The public [AIUP methodology](https://unifiedprocess.ai/methodology.html) names a Software Architecture Document as an Elaboration artifact. Martinelli's public [4+1-to-AIUP article](https://martinelli.ch/a-paper-from-1995-describes-how-you-should-work-with-ai-agents/) proposes Logical, Development, Process, Physical, and +1 Scenario views as a structure for AIUP architecture and argues that architectural views can have executable counterparts.
+
+**Observed public artifacts.** The reviewed [`aiup-core` artifact flow](https://github.com/AI-Unified-Process/marketplace/blob/main/aiup-core/README.md) standardizes the vision, requirements catalog, entity model, use-case diagram and specifications, and test journeys, but it does not define an SAD or ADR artifact or an architecture-specific core skill. The [project-setup guidance](https://github.com/AI-Unified-Process/marketplace/blob/main/docs/guides/project-setup.md) places stack-specific architecture conventions in project guidance or plugin documentation. The Task Manager case supplies genuine executable guardrails: its [ArchUnit `ArchitectureTest`](https://github.com/AI-Unified-Process/task-manager/blob/main/src/test/java/ch/martinelli/demo/aiup/ArchitectureTest.java) enforces selected layer-access and Vaadin-dependency rules.
+
+**SKE evaluation.** These findings support a narrower conclusion than treating architecture as comprehensively executable. Architectural representation, decision authority, enforcement, cross-view consistency, and lifecycle remain separate concerns:
+
+- **representation:** public AIUP names a SAD, while 4+1 supplies a useful view structure;
+- **decision authority:** the reviewed public workflow does not identify the authoritative architecture record or a precedence rule when architecture decisions conflict with specifications, code, tests, or operational evidence;
+- **executable enforcement:** selected project- and stack-specific rules are enforced, but this does not demonstrate comprehensive architecture governance;
+- **cross-view consistency:** the reviewed public workflow defines no standard mechanism for keeping Logical, Development, Process, and Physical views mutually consistent;
+- **maintenance lifecycle:** AIUP defines change reconciliation for behavioral specifications and their downstream artifacts, but the reviewed public workflow does not define an equivalent approval, synchronization, supersession, and retirement lifecycle for architecture decisions and views.
+
+This is a bounded assessment of the reviewed public artifacts, not a claim that an AIUP project cannot add its own architecture artifacts or governance.
 
 ## Central comparison
 
@@ -280,6 +298,7 @@ Reconsider only if a new concern appears that the current AIUP specification cor
 | Entity Model as `ImplementationProjection` | not demonstrated; current Entity Model is not deliberately derived from the experiment Semantic Model |
 | Task Manager semantic integration | executed falsification evidence for the current pinned UC-006 slice; no production semantic layer justified |
 | AIUP as an SKE dependency | no |
+| AIUP architecture in reviewed public artifacts | SAD and 4+1 support architectural representation; selected executable guardrails are observed; decision authority, cross-view consistency, and the architecture-maintenance lifecycle are not standardized in the reviewed public workflow |
 
 ## Conclusion
 
